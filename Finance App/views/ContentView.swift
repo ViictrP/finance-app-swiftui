@@ -38,9 +38,8 @@ struct ContentView: View {
 							.bold()
 						Spacer()
 						Text("100%")
-							.font(.system(.body))
+							.font(.system(.headline))
 					}
-					.padding(.horizontal, HORIZONTAL_PADDING)
 					
 					Color.blue
 						.frame(width: tapped ? 300 : 68, height: 15)
@@ -56,8 +55,21 @@ struct ContentView: View {
 						.frame(width: 310, height:25)
 						.background(Color.black.opacity(0.05))
 						.clipShape(RoundedRectangle(cornerRadius: 20, style: .continuous))
+					
+					Spacer()
+					
+					HStack {
+						Text("Transações")
+							.font(.system(.title))
+							.bold()
+						Spacer()
+						Button("add novo") {
+							
+						}
+					}
 						
 				}
+				.padding(.horizontal, HORIZONTAL_PADDING)
 
 			}
 			.padding(.top, 30)
