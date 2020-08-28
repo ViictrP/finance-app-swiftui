@@ -11,6 +11,7 @@ import SwiftUI
 struct ContentView: View {
 	let HORIZONTAL_PADDING: CGFloat = 30
 	let uiState: UIStateModel = UIStateModel()
+	@State() var tapped: Bool = false
 	
     var body: some View {
 		ScrollView(.vertical) {
@@ -42,11 +43,20 @@ struct ContentView: View {
 					.padding(.horizontal, HORIZONTAL_PADDING)
 					
 					Color.blue
-						.frame(width: 250, height: 15, alignment: .leading)
+						.frame(width: tapped ? 300 : 68, height: 15)
 						.clipShape(RoundedRectangle(cornerRadius: 20, style: .continuous))
 						.frame(width: 300, height: 15, alignment: .leading)
-						.background(Color.gray)
+						.animation(.spring(response: 0.45, dampingFraction: 0.7, blendDuration: 0))
+						.onTapGesture {
+							self.tapped = !self.tapped
+						}
+						.background(Color.black.opacity(0.07))
 						.clipShape(RoundedRectangle(cornerRadius: 20, style: .continuous))
+						.padding()
+						.frame(width: 310, height:25)
+						.background(Color.black.opacity(0.05))
+						.clipShape(RoundedRectangle(cornerRadius: 20, style: .continuous))
+						
 				}
 
 			}
