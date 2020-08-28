@@ -15,7 +15,7 @@ struct SnapCarousel: View {
 		let spacing:            CGFloat = 16
 		let widthOfHiddenCards: CGFloat = 10
 		// UIScreen.main.bounds.width - 10
-		let cardHeight:         CGFloat = 220
+		let cardHeight:         CGFloat = 190
 		
 		let items = [
 			Card( id: 0, name: "Hey" ),
@@ -34,7 +34,7 @@ struct SnapCarousel: View {
 				}
 				.foregroundColor(Color.white)
 				.background(Color.blue)
-				.clipShape(RoundedRectangle(cornerRadius: 20, style: .continuous))
+				.clipShape(RoundedRectangle(cornerRadius: 10, style: .continuous))
 				.shadow(color: Color.black.opacity(0.15), radius: 10, x: 0, y: 10)
 				.transition(AnyTransition.slide)
 				.animation(.spring())

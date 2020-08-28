@@ -32,6 +32,8 @@ struct Item<Content: View>: View {
 	
 	var body: some View {
 		content
-			.frame(width: cardWidth, height: _id == UIState.activeCard ? cardHeight : cardHeight - 60, alignment: .center)
+			.frame(width: cardWidth,
+				   height: cardHeight,
+				   alignment: .center)
 	}
 }
