@@ -9,6 +9,7 @@
 import SwiftUI
 
 struct ContentView: View {
+	let HORIZONTAL_PADDING: CGFloat = 30
 	let uiState: UIStateModel = UIStateModel()
 	
     var body: some View {
@@ -17,19 +18,40 @@ struct ContentView: View {
 				HStack {
 					Text("Seus cartões")
 						.font(.system(.title))
-						.foregroundColor(.black)
+						.bold()
 					
 					Spacer()
-					
+				
 					Button("add novo") {
 						
 					}
 				}
-				.padding(.horizontal, 30)
+				.padding(.horizontal, HORIZONTAL_PADDING)
 				
 				SnapCarousel(UIState: uiState)
+				Spacer()
+				VStack(spacing: 30) {
+					HStack {
+						Text("Balanço")
+							.font(.system(.title))
+							.bold()
+						Spacer()
+						Text("100%")
+							.font(.system(.body))
+					}
+					.padding(.horizontal, HORIZONTAL_PADDING)
+					
+					Color.blue
+						.frame(width: 250, height: 15, alignment: .leading)
+						.clipShape(RoundedRectangle(cornerRadius: 20, style: .continuous))
+						.frame(width: 300, height: 15, alignment: .leading)
+						.background(Color.gray)
+						.clipShape(RoundedRectangle(cornerRadius: 20, style: .continuous))
+				}
+
 			}
 			.padding(.top, 30)
+			
 		}
     }
 }
