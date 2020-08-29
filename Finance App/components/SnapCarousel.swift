@@ -15,7 +15,7 @@ struct SnapCarousel: View {
 		let spacing:            CGFloat = 16
 		let widthOfHiddenCards: CGFloat = 10
 		// UIScreen.main.bounds.width - 10
-		let cardHeight:         CGFloat = 190
+		let cardHeight:         CGFloat = 100
 		
 		let items = [
 			Card( id: 0, name: "Hey" ),
@@ -30,7 +30,27 @@ struct SnapCarousel: View {
 					  spacing:              spacing,
 					  widthOfHiddenCards:   widthOfHiddenCards,
 					  cardHeight:           cardHeight ) {
-					Text("\(item.name)")
+					HStack {
+						Image("nubank")
+							.resizable()
+							.frame(width:36, height: 24, alignment: .leading)
+						Spacer()
+						VStack(alignment: .leading, spacing: 10) {
+							Text("Nubank")
+							Text("XXXX XXXX XXXX 5966")
+								.font(.system(.headline))
+								.foregroundColor(Color("Fadded-text"))
+						}
+						Spacer()
+						Button(action: {}, label: {
+							Image("next")
+								.resizable()
+								.aspectRatio(contentMode: .fit)
+								.padding()
+						}).frame(width: 50, height: cardHeight)
+						.background(Color.white.opacity(0.1))
+					}
+					.padding(.leading)
 				}
 				.foregroundColor(Color.white)
 				.background(Color.blue)

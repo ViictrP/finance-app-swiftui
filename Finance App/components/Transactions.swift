@@ -8,11 +8,27 @@
 
 import SwiftUI
 
+struct InvoiceItem {
+	var id: Int
+	var title: String
+	var description: String
+	var category: String
+	var value: Double
+	var when: Date
+}
+
 struct Transactions: View {
 	let HORIZONTAL_PADDING: CGFloat = 30
 	
     var body: some View {
-		VStack {
+		let items = [
+			InvoiceItem(id: 1, title: "McDonalds", description: "Delivery", category: "Online", value: 79.90, when: Date()),
+			InvoiceItem(id: 2, title: "Macbook Pro 16 inch", description: "Apple inc", category: "Online", value: 79.90, when: Date()),
+			InvoiceItem(id: 3, title: "Pedido 5870", description: "Habib's", category: "Online", value: 79.90, when: Date())
+		]
+		
+		
+		VStack(spacing: 30) {
 			HStack {
 				Text("Transações")
 					.font(.system(.title))
@@ -31,6 +47,11 @@ struct Transactions: View {
 							.aspectRatio(contentMode: .fit)
 					})
 					.frame(width: 24, height: 24)
+				}
+			}
+			VStack(alignment: .leading, spacing: 20) {
+				ForEach(items, id: \.self.id) { item in
+					TransactionItem(transaction: item)
 				}
 			}
 		}
