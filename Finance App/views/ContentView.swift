@@ -26,25 +26,28 @@ struct ContentView: View, CalendarMonthChanged {
 	
     var body: some View {
 		ScrollView(.vertical) {
-			VStack(alignment: .center, spacing: 30) {
-				HStack {
-					Text("Seus cartões")
-						.font(.system(.title))
-						.bold()
-					Spacer()
-					Button("add novo") { }
+			VStack(alignment: .center, spacing: 50) {
+				VStack(spacing: 30) {
+					HStack {
+						Text("Seus cartões")
+							.font(.system(.title))
+							.bold()
+						Spacer()
+						Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/, label: {
+							Image("plus-solid")
+								.resizable()
+								.aspectRatio(contentMode: .fit)
+						})
+						.frame(width: 24, height: 24)
+					}
+					.padding(.horizontal, HORIZONTAL_PADDING)
+					
+					SnapCarousel(UIState: uiState)
 				}
-				.padding(.horizontal, HORIZONTAL_PADDING)
-				
-				SnapCarousel(UIState: uiState)
-				
-				Spacer()
 				
 				CalendarView(delegate: self)
 				
 				ProgressBar()
-				
-				Spacer()
 				
 				Transactions()
 			}

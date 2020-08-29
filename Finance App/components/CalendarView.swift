@@ -26,12 +26,16 @@ struct CalendarView: View {
 		HStack {
 			Button(action: {
 				self.month = CalendarMonths.getPrevious(monthIndex: self.month.arrayIndex)
+				if self.month.arrayIndex == CalendarMonths.DECEMBER.arrayIndex {
+					self.year -= 1
+				}
 				self.delegate?.onPreviousMonth(month: self.month.calendarIndex, year: year)
 			}, label: {
 				Image("back")
 					.resizable()
 					.aspectRatio(contentMode: .fit)
 			})
+			.buttonStyle(PlainButtonStyle())
 			.frame(width: BUTTON_WIDTH, height: BUTTON_HEIGHT)
 			.padding(10)
 			.background(Color.blue)
@@ -53,12 +57,16 @@ struct CalendarView: View {
 			
 			Button(action: {
 				self.month = CalendarMonths.getNext(monthIndex: self.month.arrayIndex)
+				if self.month.arrayIndex == CalendarMonths.JANUARY.arrayIndex {
+					self.year += 1
+				}
 				self.delegate?.onNextMonth(month: self.month.calendarIndex, year: self.year)
 			}, label: {
 				Image("next")
 					.resizable()
 					.aspectRatio(contentMode: .fit)
 			})
+			.buttonStyle(PlainButtonStyle())
 			.frame(width: BUTTON_WIDTH, height: BUTTON_HEIGHT)
 			.padding(10)
 			.background(Color.blue)

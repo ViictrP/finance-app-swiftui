@@ -18,7 +18,20 @@ struct Transactions: View {
 					.font(.system(.title))
 					.bold()
 				Spacer()
-				Button("add novo") { }
+				HStack(spacing: 20) {
+					Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/, label: {
+						Image("list-ul-solid")
+							.resizable()
+							.aspectRatio(contentMode: .fit)
+					})
+					.frame(width: 24, height: 24)
+					Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/, label: {
+						Image("plus-solid")
+							.resizable()
+							.aspectRatio(contentMode: .fit)
+					})
+					.frame(width: 24, height: 24)
+				}
 			}
 		}
 		.padding(.horizontal, HORIZONTAL_PADDING)

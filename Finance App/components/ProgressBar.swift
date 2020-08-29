@@ -13,7 +13,7 @@ struct ProgressBar: View {
 	@State() var tapped: Bool = false
 	
     var body: some View {
-		VStack(spacing: 30) {
+		VStack(spacing: 20) {
 			HStack {
 				Text("Balanço")
 					.font(.system(.title))
@@ -37,7 +37,37 @@ struct ProgressBar: View {
 				.frame(width: 310, height:25)
 				.background(Color.black.opacity(0.05))
 				.clipShape(RoundedRectangle(cornerRadius: 20, style: .continuous))
-				
+			
+			HStack(spacing: 39) {
+				HStack {
+					Image("arrow_down")
+						.resizable()
+						.aspectRatio(contentMode: .fit)
+						.frame(width: 24, height: 24)
+					VStack(alignment: .leading, spacing: 10) {
+						Text("gasto")
+							.font(.body)
+							.foregroundColor(Color("Subheadline"))
+						Text("R$ 1.299,99")
+							.font(.headline)
+					}
+					.frame(width: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/)
+				}
+				HStack {
+					Image("arrow_down_faded")
+						.resizable()
+						.aspectRatio(contentMode: .fit)
+						.frame(width: 24, height: 24)
+					VStack(alignment: .leading, spacing: 10) {
+						Text("disponível")
+							.font(.body)
+							.foregroundColor(Color("Subheadline"))
+						Text("R$ 4.299,99")
+							.font(.headline)
+					}
+					.frame(width: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/)
+				}
+			}
 		}
 		.padding(.horizontal, HORIZONTAL_PADDING)
     }

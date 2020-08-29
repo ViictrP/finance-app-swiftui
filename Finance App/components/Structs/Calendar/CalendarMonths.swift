@@ -25,18 +25,18 @@ struct CalendarMonth {
 }
 
 struct CalendarMonths {
-	static let JANUARY = CalendarMonth(name: "JANEIRO", calendarIndex: 1, arrayIndex: 0, previous: 12, next: 2)
-	static let FEBRUARY = CalendarMonth(name: "FEVEREIRO", calendarIndex: 2, arrayIndex: 1, previous: 1, next: 2)
-	static let MARCH = CalendarMonth(name: "MARÇO", calendarIndex: 3, arrayIndex: 2, previous: 2, next: 2)
-	static let APRIL = CalendarMonth(name: "ABRIL", calendarIndex: 4, arrayIndex: 3, previous: 3, next: 2)
-	static let MAY = CalendarMonth(name: "MAIO", calendarIndex: 5, arrayIndex: 4, previous: 4, next: 2)
-	static let JUNE = CalendarMonth(name: "JUNHO", calendarIndex: 6, arrayIndex: 5, previous: 5, next: 2)
-	static let JULY = CalendarMonth(name: "JULHO", calendarIndex: 7, arrayIndex: 6, previous: 6, next: 2)
-	static let AUGUST = CalendarMonth(name: "AGOSTO", calendarIndex: 8, arrayIndex: 7, previous: 7, next: 2)
-	static let SEPTEMBER = CalendarMonth(name: "SETEMBRO", calendarIndex: 9, arrayIndex: 8, previous: 8, next: 2)
-	static let OCTOBER = CalendarMonth(name: "OUTUBRO", calendarIndex: 10, arrayIndex: 9, previous: 9, next: 2)
-	static let NOVEMBER = CalendarMonth(name: "NOVEMBRO", calendarIndex: 11, arrayIndex: 10, previous: 10, next: 2)
-	static let DECEMBER = CalendarMonth(name: "DEZEMBRO", calendarIndex: 12, arrayIndex: 11, previous: 11, next: 2)
+	static let JANUARY = CalendarMonth(name: "JANEIRO", calendarIndex: 1, arrayIndex: 0, previous: 11, next: 1)
+	static let FEBRUARY = CalendarMonth(name: "FEVEREIRO", calendarIndex: 2, arrayIndex: 1, previous: 0, next: 2)
+	static let MARCH = CalendarMonth(name: "MARÇO", calendarIndex: 3, arrayIndex: 2, previous: 1, next: 3)
+	static let APRIL = CalendarMonth(name: "ABRIL", calendarIndex: 4, arrayIndex: 3, previous: 2, next: 4)
+	static let MAY = CalendarMonth(name: "MAIO", calendarIndex: 5, arrayIndex: 4, previous: 3, next: 5)
+	static let JUNE = CalendarMonth(name: "JUNHO", calendarIndex: 6, arrayIndex: 5, previous: 4, next: 6)
+	static let JULY = CalendarMonth(name: "JULHO", calendarIndex: 7, arrayIndex: 6, previous: 5, next: 7)
+	static let AUGUST = CalendarMonth(name: "AGOSTO", calendarIndex: 8, arrayIndex: 7, previous: 6, next: 8)
+	static let SEPTEMBER = CalendarMonth(name: "SETEMBRO", calendarIndex: 9, arrayIndex: 8, previous: 7, next: 9)
+	static let OCTOBER = CalendarMonth(name: "OUTUBRO", calendarIndex: 10, arrayIndex: 9, previous: 8, next: 10)
+	static let NOVEMBER = CalendarMonth(name: "NOVEMBRO", calendarIndex: 11, arrayIndex: 10, previous: 9, next: 11)
+	static let DECEMBER = CalendarMonth(name: "DEZEMBRO", calendarIndex: 12, arrayIndex: 11, previous: 10, next: 0)
 	
 	static var MONTHS: [CalendarMonth] = [
 		JANUARY,

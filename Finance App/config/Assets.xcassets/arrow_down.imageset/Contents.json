@@ -1,7 +1,7 @@
 {
   "images" : [
     {
-      "filename" : "back_white-2.svg",
+      "filename" : "arrow_down.svg",
       "idiom" : "universal",
       "scale" : "1x"
     },
@@ -12,7 +12,7 @@
           "value" : "light"
         }
       ],
-      "filename" : "back_white-1.svg",
+      "filename" : "arrow_down-1.svg",
       "idiom" : "universal",
       "scale" : "1x"
     },
@@ -23,12 +23,12 @@
           "value" : "dark"
         }
       ],
-      "filename" : "back_white.svg",
+      "filename" : "arrow_down-2.svg",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "back_white-3.svg",
+      "filename" : "arrow_down-7.svg",
       "idiom" : "universal",
       "scale" : "2x"
     },
@@ -39,7 +39,7 @@
           "value" : "light"
         }
       ],
-      "filename" : "back_white-4.svg",
+      "filename" : "arrow_down-5.svg",
       "idiom" : "universal",
       "scale" : "2x"
     },
@@ -50,12 +50,12 @@
           "value" : "dark"
         }
       ],
-      "filename" : "back_white-5.svg",
+      "filename" : "arrow_down-3.svg",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "back_white-6.svg",
+      "filename" : "arrow_down-8.svg",
       "idiom" : "universal",
       "scale" : "3x"
     },
@@ -66,7 +66,7 @@
           "value" : "light"
         }
       ],
-      "filename" : "back_white-7.svg",
+      "filename" : "arrow_down-6.svg",
       "idiom" : "universal",
       "scale" : "3x"
     },
@@ -77,7 +77,7 @@
           "value" : "dark"
         }
       ],
-      "filename" : "back_white-8.svg",
+      "filename" : "arrow_down-4.svg",
       "idiom" : "universal",
       "scale" : "3x"
     }
