@@ -8,9 +8,21 @@
 
 import SwiftUI
 
-struct ContentView: View {
+struct ContentView: View, CalendarMonthChanged {
 	let HORIZONTAL_PADDING: CGFloat = 30
 	let uiState: UIStateModel = UIStateModel()
+	@State var month: Int = 0
+	@State var year: Int = 0
+	
+	func onNextMonth(month: Int, year: Int) {
+		self.month = month
+		self.year = year
+	}
+	
+	func onPreviousMonth(month: Int, year: Int) {
+		self.month = month
+		self.year = year
+	}
 	
     var body: some View {
 		ScrollView(.vertical) {
@@ -27,6 +39,8 @@ struct ContentView: View {
 				SnapCarousel(UIState: uiState)
 				
 				Spacer()
+				
+				CalendarView(delegate: self)
 				
 				ProgressBar()
 				

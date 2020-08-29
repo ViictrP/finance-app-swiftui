@@ -11,6 +11,9 @@
 		4409643024F8893E004D117D /* Carousel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4409642F24F8893E004D117D /* Carousel.swift */; };
 		4409643224F88A91004D117D /* Canvas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4409643124F88A91004D117D /* Canvas.swift */; };
 		4409643424F88AE5004D117D /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4409643324F88AE5004D117D /* Item.swift */; };
+		4474AE1224F9DE0F005D72B1 /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4474AE1124F9DE0F005D72B1 /* CalendarView.swift */; };
+		4474AE1524F9EA24005D72B1 /* CalendarMonths.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4474AE1424F9EA24005D72B1 /* CalendarMonths.swift */; };
+		4474AE1824F9F659005D72B1 /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4474AE1724F9F659005D72B1 /* DateExtension.swift */; };
 		44919F6624F95ADA003EDAF6 /* Transactions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44919F6524F95ADA003EDAF6 /* Transactions.swift */; };
 		44AA805424F9592400274302 /* ProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA805324F9592400274302 /* ProgressBar.swift */; };
 		44AAD34F24F883D0002C9722 /* SnapCarousel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AAD34E24F883D0002C9722 /* SnapCarousel.swift */; };
@@ -38,6 +41,9 @@
 		4409642F24F8893E004D117D /* Carousel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Carousel.swift; sourceTree = "<group>"; };
 		4409643124F88A91004D117D /* Canvas.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Canvas.swift; sourceTree = "<group>"; };
 		4409643324F88AE5004D117D /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		4474AE1124F9DE0F005D72B1 /* CalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
+		4474AE1424F9EA24005D72B1 /* CalendarMonths.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarMonths.swift; sourceTree = "<group>"; };
+		4474AE1724F9F659005D72B1 /* DateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
 		44919F6524F95ADA003EDAF6 /* Transactions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transactions.swift; sourceTree = "<group>"; };
 		44AA805324F9592400274302 /* ProgressBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBar.swift; sourceTree = "<group>"; };
 		44AAD34E24F883D0002C9722 /* SnapCarousel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnapCarousel.swift; sourceTree = "<group>"; };
@@ -75,6 +81,7 @@
 		4409642C24F888DA004D117D /* Structs */ = {
 			isa = PBXGroup;
 			children = (
+				4474AE1324F9EA0F005D72B1 /* Calendar */,
 				4409643524F88C95004D117D /* Carousel */,
 			);
 			path = Structs;
@@ -91,6 +98,22 @@
 			path = Carousel;
 			sourceTree = "<group>";
 		};
+		4474AE1324F9EA0F005D72B1 /* Calendar */ = {
+			isa = PBXGroup;
+			children = (
+				4474AE1424F9EA24005D72B1 /* CalendarMonths.swift */,
+			);
+			path = Calendar;
+			sourceTree = "<group>";
+		};
+		4474AE1624F9F64D005D72B1 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				4474AE1724F9F659005D72B1 /* DateExtension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		44AAD34D24F883BB002C9722 /* components */ = {
 			isa = PBXGroup;
 			children = (
@@ -98,6 +121,7 @@
 				44AAD34E24F883D0002C9722 /* SnapCarousel.swift */,
 				44AA805324F9592400274302 /* ProgressBar.swift */,
 				44919F6524F95ADA003EDAF6 /* Transactions.swift */,
+				4474AE1124F9DE0F005D72B1 /* CalendarView.swift */,
 			);
 			path = components;
 			sourceTree = "<group>";
@@ -123,6 +147,7 @@
 		44E3D57124F6C95D00D37DD8 /* Finance App */ = {
 			isa = PBXGroup;
 			children = (
+				4474AE1624F9F64D005D72B1 /* Extensions */,
 				44AAD34D24F883BB002C9722 /* components */,
 				44E3D58024F6C95E00D37DD8 /* Info.plist */,
 				44E3D59624F6C98000D37DD8 /* config */,
@@ -221,7 +246,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1160;
-				LastUpgradeCheck = 1160;
+				LastUpgradeCheck = 1200;
 				ORGANIZATIONNAME = ViictrP;
 				TargetAttributes = {
 					44E3D56E24F6C95D00D37DD8 = {
@@ -277,9 +302,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4474AE1224F9DE0F005D72B1 /* CalendarView.swift in Sources */,
 				44919F6624F95ADA003EDAF6 /* Transactions.swift in Sources */,
+				4474AE1524F9EA24005D72B1 /* CalendarMonths.swift in Sources */,
 				4409643224F88A91004D117D /* Canvas.swift in Sources */,
 				44E3D57324F6C95D00D37DD8 /* AppDelegate.swift in Sources */,
+				4474AE1824F9F659005D72B1 /* DateExtension.swift in Sources */,
 				44E3D57524F6C95D00D37DD8 /* SceneDelegate.swift in Sources */,
 				4409642E24F888EA004D117D /* Card.swift in Sources */,
 				44AA805424F9592400274302 /* ProgressBar.swift in Sources */,
@@ -346,6 +374,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -406,6 +435,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
