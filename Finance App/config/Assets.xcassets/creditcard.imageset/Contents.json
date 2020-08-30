@@ -1,7 +1,7 @@
 {
   "images" : [
     {
-      "filename" : "plus-solid.svg",
+      "filename" : "creditcard@2x-5.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
@@ -12,7 +12,7 @@
           "value" : "light"
         }
       ],
-      "filename" : "plus-solid-6.svg",
+      "filename" : "creditcard@2x-3.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
@@ -23,12 +23,12 @@
           "value" : "dark"
         }
       ],
-      "filename" : "plus-solid-3.svg",
+      "filename" : "creditcard-1.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "plus-solid-1.svg",
+      "filename" : "creditcard@2x-4.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
@@ -39,7 +39,7 @@
           "value" : "light"
         }
       ],
-      "filename" : "plus-solid-7.svg",
+      "filename" : "creditcard@2x-1.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
@@ -50,12 +50,12 @@
           "value" : "dark"
         }
       ],
-      "filename" : "plus-solid-4.svg",
+      "filename" : "creditcard@2x-2.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "plus-solid-2.svg",
+      "filename" : "creditcard@3x-3.png",
       "idiom" : "universal",
       "scale" : "3x"
     },
@@ -66,7 +66,7 @@
           "value" : "light"
         }
       ],
-      "filename" : "plus-solid-8.svg",
+      "filename" : "creditcard@3x-1.png",
       "idiom" : "universal",
       "scale" : "3x"
     },
@@ -77,7 +77,7 @@
           "value" : "dark"
         }
       ],
-      "filename" : "plus-solid-5.svg",
+      "filename" : "creditcard@3x-2.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

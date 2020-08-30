@@ -53,7 +53,7 @@ struct SnapCarousel: View {
 					.padding(.leading)
 				}
 				.foregroundColor(Color.white)
-				.background(Color.blue)
+				.background(Color("main"))
 				.clipShape(RoundedRectangle(cornerRadius: 10, style: .continuous))
 				.shadow(color: Color.black.opacity(0.15), radius: 10, x: 0, y: 10)
 				.transition(AnyTransition.slide)

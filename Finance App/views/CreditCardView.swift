@@ -8,7 +8,7 @@
 
 import SwiftUI
 
-struct ContentView: View, CalendarMonthChanged {
+struct CreditCardView: View, CalendarMonthChanged {
 	let HORIZONTAL_PADDING: CGFloat = 30
 	let uiState: UIStateModel = UIStateModel()
 	@State var month: Int = 0
@@ -25,7 +25,7 @@ struct ContentView: View, CalendarMonthChanged {
 	}
 	
     var body: some View {
-		ScrollView(.vertical) {
+		ScrollView(.vertical, showsIndicators: false) {
 			VStack(alignment: .center, spacing: 50) {
 				VStack(spacing: 30) {
 					HStack {
@@ -58,6 +58,6 @@ struct ContentView: View, CalendarMonthChanged {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        CreditCardView()
     }
 }

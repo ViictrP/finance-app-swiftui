@@ -23,7 +23,7 @@ struct ProgressBar: View {
 					.font(.system(.headline))
 			}
 			
-			Color.blue
+			Color("progressbar")
 				.frame(width: tapped ? 300 : 68, height: 15)
 				.clipShape(RoundedRectangle(cornerRadius: 20, style: .continuous))
 				.frame(width: 300, height: 15, alignment: .leading)
@@ -31,11 +31,11 @@ struct ProgressBar: View {
 				.onTapGesture {
 					self.tapped = !self.tapped
 				}
-				.background(Color.black.opacity(0.07))
+				.background(Color("black-faded"))
 				.clipShape(RoundedRectangle(cornerRadius: 20, style: .continuous))
 				.padding()
 				.frame(width: 310, height:25)
-				.background(Color.black.opacity(0.05))
+				.background(Color("black-faded-2"))
 				.clipShape(RoundedRectangle(cornerRadius: 20, style: .continuous))
 			
 			HStack(spacing: 39) {

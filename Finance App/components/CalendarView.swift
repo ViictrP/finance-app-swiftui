@@ -16,69 +16,76 @@ protocol CalendarMonthChanged {
 struct CalendarView: View {
 	let HORIZONTAL_PADDING: CGFloat = 30
 	let BUTTON_WIDTH: CGFloat = 24
-	let BUTTON_HEIGHT: CGFloat = 24
+	let BUTTON_HEIGHT: CGFloat = 40
 	var delegate: CalendarMonthChanged?
 	
 	@State() var month: CalendarMonth = CalendarMonths.getMonth(monthIndex: Date().get(.month))
 	@State var year: Int = Date().get(.year)
 	
-    var body: some View {
-		HStack {
-			Button(action: {
-				self.month = CalendarMonths.getPrevious(monthIndex: self.month.arrayIndex)
-				if self.month.arrayIndex == CalendarMonths.DECEMBER.arrayIndex {
-					self.year -= 1
+	var body: some View {
+		VStack {
+			HStack {
+				VStack {
+					Button(action: {
+						self.month = CalendarMonths.getPrevious(monthIndex: self.month.arrayIndex)
+						if self.month.arrayIndex == CalendarMonths.DECEMBER.arrayIndex {
+							self.year -= 1
+						}
+						self.delegate?.onPreviousMonth(month: self.month.calendarIndex, year: year)
+					}, label: {
+						Image("back")
+							.resizable()
+							.aspectRatio(contentMode: .fit)
+					})
+					.buttonStyle(PlainButtonStyle())
+					.frame(width: 18, height: 18)
 				}
-				self.delegate?.onPreviousMonth(month: self.month.calendarIndex, year: year)
-			}, label: {
-				Image("back")
-					.resizable()
-					.aspectRatio(contentMode: .fit)
-			})
-			.buttonStyle(PlainButtonStyle())
-			.frame(width: BUTTON_WIDTH, height: BUTTON_HEIGHT)
-			.padding(10)
-			.background(Color.blue)
-			.clipShape(RoundedRectangle(cornerRadius: 20, style: .continuous))
-			.shadow(color: Color.black.opacity(0.2), radius: 20, x: 0.0, y: 0.0)
-			
-			Spacer()
-			
-			VStack(spacing: 10) {
-				Text("\(self.year)".replacingOccurrences(of: ",", with: ""))
-					.font(.system(.headline))
-					.foregroundColor(Color("Subheadline"))
+				.frame(width: BUTTON_WIDTH, height: BUTTON_HEIGHT)
+				.padding(10)
+				.background(Color("main"))
+
+				Spacer()
 				
-				Text("\(self.month.name)")
-					.font(.system(size: 23))
-			}
-			
-			Spacer()
-			
-			Button(action: {
-				self.month = CalendarMonths.getNext(monthIndex: self.month.arrayIndex)
-				if self.month.arrayIndex == CalendarMonths.JANUARY.arrayIndex {
-					self.year += 1
+				VStack(spacing: 3) {
+					Text("\(self.year)".replacingOccurrences(of: ",", with: ""))
+						.font(.system(.subheadline))
+						.foregroundColor(Color("Subheadline"))
+					
+					Text("\(self.month.name)")
+						.font(.headline)
 				}
-				self.delegate?.onNextMonth(month: self.month.calendarIndex, year: self.year)
-			}, label: {
-				Image("next")
-					.resizable()
-					.aspectRatio(contentMode: .fit)
-			})
-			.buttonStyle(PlainButtonStyle())
-			.frame(width: BUTTON_WIDTH, height: BUTTON_HEIGHT)
-			.padding(10)
-			.background(Color.blue)
+				
+				Spacer()
+				
+				VStack {
+					Button(action: {
+						self.month = CalendarMonths.getNext(monthIndex: self.month.arrayIndex)
+						if self.month.arrayIndex == CalendarMonths.JANUARY.arrayIndex {
+							self.year += 1
+						}
+						self.delegate?.onNextMonth(month: self.month.calendarIndex, year: self.year)
+					}, label: {
+						Image("next")
+							.resizable()
+							.aspectRatio(contentMode: .fit)
+					})
+					.buttonStyle(PlainButtonStyle())
+					.frame(width: 18, height: 18)
+				}
+				.frame(width: BUTTON_WIDTH, height: BUTTON_HEIGHT)
+				.padding(10)
+				.background(Color("main"))
+			}
+			.background(Color.gray.opacity(0.1))
 			.clipShape(RoundedRectangle(cornerRadius: 20, style: .continuous))
-			.shadow(color: Color.black.opacity(0.2), radius: 20, x: 0.0, y: 0.0)
+			
 		}
 		.padding(.horizontal, HORIZONTAL_PADDING)
-    }
+	}
 }
 
 struct Calendar_Previews: PreviewProvider {
 	static var previews: some View {
-        CalendarView()
-    }
+		CalendarView()
+	}
 }

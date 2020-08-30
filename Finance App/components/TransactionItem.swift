@@ -15,13 +15,13 @@ struct TransactionItem: View {
     var body: some View {
 		HStack(spacing: 20) {
 			VStack(alignment: .center) {
-				Image("back")
+				Image("shopping-bag-solid")
 					.resizable()
 					.aspectRatio(contentMode: .fit)
 			}
 			.frame(width: 25, height: 50)
 			.padding()
-			.background(Color.blue)
+			.background(Color("main"))
 			.clipShape(RoundedRectangle(cornerRadius: 13, style: .continuous))
 		
 			VStack(alignment: .leading, spacing: 10) {
@@ -30,7 +30,7 @@ struct TransactionItem: View {
 						.font(.subheadline)
 						.foregroundColor(Color("Subheadline"))
 					Spacer()
-					Text("\(transaction.when.get(.day))/\(transaction.when.get(.month))/\(transaction.when.get(.year))")
+					Text("\(transaction.when.get(.day))/\(transaction.when.get(.month))/\(transaction.when.get(.year))".replacingOccurrences(of: ",", with: ""))
 						.font(.subheadline)
 						.foregroundColor(Color("Subheadline"))
 				}

@@ -11,6 +11,7 @@
 		4409643024F8893E004D117D /* Carousel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4409642F24F8893E004D117D /* Carousel.swift */; };
 		4409643224F88A91004D117D /* Canvas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4409643124F88A91004D117D /* Canvas.swift */; };
 		4409643424F88AE5004D117D /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4409643324F88AE5004D117D /* Item.swift */; };
+		444CD3AC24FC566000DFAC80 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 444CD3AB24FC566000DFAC80 /* HomeView.swift */; };
 		4474AE1224F9DE0F005D72B1 /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4474AE1124F9DE0F005D72B1 /* CalendarView.swift */; };
 		4474AE1524F9EA24005D72B1 /* CalendarMonths.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4474AE1424F9EA24005D72B1 /* CalendarMonths.swift */; };
 		4474AE1824F9F659005D72B1 /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4474AE1724F9F659005D72B1 /* DateExtension.swift */; };
@@ -20,7 +21,7 @@
 		44E2ABF624FABC3600EBABED /* TransactionItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44E2ABF524FABC3600EBABED /* TransactionItem.swift */; };
 		44E3D57324F6C95D00D37DD8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44E3D57224F6C95D00D37DD8 /* AppDelegate.swift */; };
 		44E3D57524F6C95D00D37DD8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44E3D57424F6C95D00D37DD8 /* SceneDelegate.swift */; };
-		44E3D57724F6C95D00D37DD8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44E3D57624F6C95D00D37DD8 /* ContentView.swift */; };
+		44E3D57724F6C95D00D37DD8 /* CreditCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44E3D57624F6C95D00D37DD8 /* CreditCardView.swift */; };
 		44E3D57924F6C95E00D37DD8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 44E3D57824F6C95E00D37DD8 /* Assets.xcassets */; };
 		44E3D57C24F6C95E00D37DD8 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 44E3D57B24F6C95E00D37DD8 /* Preview Assets.xcassets */; };
 		44E3D57F24F6C95E00D37DD8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 44E3D57D24F6C95E00D37DD8 /* LaunchScreen.storyboard */; };
@@ -42,6 +43,7 @@
 		4409642F24F8893E004D117D /* Carousel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Carousel.swift; sourceTree = "<group>"; };
 		4409643124F88A91004D117D /* Canvas.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Canvas.swift; sourceTree = "<group>"; };
 		4409643324F88AE5004D117D /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		444CD3AB24FC566000DFAC80 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		4474AE1124F9DE0F005D72B1 /* CalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
 		4474AE1424F9EA24005D72B1 /* CalendarMonths.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarMonths.swift; sourceTree = "<group>"; };
 		4474AE1724F9F659005D72B1 /* DateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
@@ -52,7 +54,7 @@
 		44E3D56F24F6C95D00D37DD8 /* Finance App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Finance App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		44E3D57224F6C95D00D37DD8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		44E3D57424F6C95D00D37DD8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		44E3D57624F6C95D00D37DD8 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		44E3D57624F6C95D00D37DD8 /* CreditCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditCardView.swift; sourceTree = "<group>"; };
 		44E3D57824F6C95E00D37DD8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		44E3D57B24F6C95E00D37DD8 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		44E3D57E24F6C95E00D37DD8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -189,7 +191,8 @@
 		44E3D59524F6C97A00D37DD8 /* views */ = {
 			isa = PBXGroup;
 			children = (
-				44E3D57624F6C95D00D37DD8 /* ContentView.swift */,
+				44E3D57624F6C95D00D37DD8 /* CreditCardView.swift */,
+				444CD3AB24FC566000DFAC80 /* HomeView.swift */,
 			);
 			path = views;
 			sourceTree = "<group>";
@@ -308,6 +311,7 @@
 				4474AE1224F9DE0F005D72B1 /* CalendarView.swift in Sources */,
 				44919F6624F95ADA003EDAF6 /* Transactions.swift in Sources */,
 				4474AE1524F9EA24005D72B1 /* CalendarMonths.swift in Sources */,
+				444CD3AC24FC566000DFAC80 /* HomeView.swift in Sources */,
 				4409643224F88A91004D117D /* Canvas.swift in Sources */,
 				44E3D57324F6C95D00D37DD8 /* AppDelegate.swift in Sources */,
 				4474AE1824F9F659005D72B1 /* DateExtension.swift in Sources */,
@@ -316,7 +320,7 @@
 				44AA805424F9592400274302 /* ProgressBar.swift in Sources */,
 				4409643424F88AE5004D117D /* Item.swift in Sources */,
 				4409643024F8893E004D117D /* Carousel.swift in Sources */,
-				44E3D57724F6C95D00D37DD8 /* ContentView.swift in Sources */,
+				44E3D57724F6C95D00D37DD8 /* CreditCardView.swift in Sources */,
 				44AAD34F24F883D0002C9722 /* SnapCarousel.swift in Sources */,
 				44E2ABF624FABC3600EBABED /* TransactionItem.swift in Sources */,
 			);
