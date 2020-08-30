@@ -13,6 +13,11 @@ struct CreditCardView: View, CalendarMonthChanged {
 	let uiState: UIStateModel = UIStateModel()
 	@State var month: Int = 0
 	@State var year: Int = 0
+	var creditCards: [CreditCard] = [
+		CreditCard(id: 1, name: "Nubank", closeDay: 10, number: "5966", limit: 4250, availableLimit: 4250),
+		CreditCard(id: 1, name: "Latam", closeDay: 10, number: "9162", limit: 12500, availableLimit: 12500),
+		CreditCard(id: 1, name: "Visa Gold", closeDay: 10, number: "9652", limit: 8500, availableLimit: 8500)
+	]
 	
 	func onNextMonth(month: Int, year: Int) {
 		self.month = month
@@ -42,7 +47,7 @@ struct CreditCardView: View, CalendarMonthChanged {
 					}
 					.padding(.horizontal, HORIZONTAL_PADDING)
 					
-					SnapCarousel(UIState: uiState)
+					CreditCardCarousel(items: creditCards)
 				}
 				
 				CalendarView(delegate: self)
