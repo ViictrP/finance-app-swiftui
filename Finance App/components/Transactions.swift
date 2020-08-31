@@ -18,7 +18,6 @@ struct InvoiceItem {
 }
 
 struct Transactions: View {
-	let HORIZONTAL_PADDING: CGFloat = 30
 	
     var body: some View {
 		let items = [
@@ -55,7 +54,7 @@ struct Transactions: View {
 				}
 			}
 		}
-		.padding(.horizontal, HORIZONTAL_PADDING)
+		.padding(.horizontal)
     }
 }
 

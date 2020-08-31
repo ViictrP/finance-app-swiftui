@@ -9,7 +9,6 @@
 import SwiftUI
 
 struct CreditCardView: View, CalendarMonthChanged {
-	let HORIZONTAL_PADDING: CGFloat = 30
 	let uiState: UIStateModel = UIStateModel()
 	@State var month: Int = 0
 	@State var year: Int = 0
@@ -45,7 +44,7 @@ struct CreditCardView: View, CalendarMonthChanged {
 						})
 						.frame(width: 24, height: 24)
 					}
-					.padding(.horizontal, HORIZONTAL_PADDING)
+					.padding(.horizontal)
 					
 					CreditCardCarousel(items: creditCards)
 				}

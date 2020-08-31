@@ -17,8 +17,8 @@ struct CreditCardCarousel: View {
 	}
 	
 	var body: some View {
-		let spacing:            CGFloat = 16
-		let widthOfHiddenCards: CGFloat = 10
+		let spacing:            CGFloat = 10
+		let widthOfHiddenCards: CGFloat = 5
 		
 		return Carousel(numberOfItems: CGFloat( items.count ), spacing: spacing, widthOfHiddenCards: widthOfHiddenCards) {
 			ForEach(items.indices, id: \.self) { index in
@@ -50,8 +50,8 @@ struct CreditCardItem: View {
 	}
 	
 	var body: some View {
-		let spacing:            CGFloat = 16
-		let widthOfHiddenCards: CGFloat = 10
+		let spacing:            CGFloat = 10
+		let widthOfHiddenCards: CGFloat = 5
 		let cardHeight:         CGFloat = 100
 		
 		return Item( _id:                  Int(self.creditCard.id),

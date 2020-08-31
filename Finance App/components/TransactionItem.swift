@@ -9,7 +9,6 @@
 import SwiftUI
 
 struct TransactionItem: View {
-	let HORIZONTAL_PADDING: CGFloat = 30
 	var transaction: InvoiceItem
 	
     var body: some View {

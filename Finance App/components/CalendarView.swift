@@ -14,7 +14,6 @@ protocol CalendarMonthChanged {
 }
 
 struct CalendarView: View {
-	let HORIZONTAL_PADDING: CGFloat = 30
 	let BUTTON_WIDTH: CGFloat = 24
 	let BUTTON_HEIGHT: CGFloat = 40
 	var delegate: CalendarMonthChanged?
@@ -80,7 +79,7 @@ struct CalendarView: View {
 			.clipShape(RoundedRectangle(cornerRadius: 20, style: .continuous))
 			
 		}
-		.padding(.horizontal, HORIZONTAL_PADDING)
+		.padding(.horizontal)
 	}
 }
 

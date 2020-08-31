@@ -9,10 +9,11 @@
 import SwiftUI
 
 struct ProgressBar: View {
-	let HORIZONTAL_PADDING: CGFloat = 30
 	@State() var tapped: Bool = false
 	
     var body: some View {
+		let WIDTH: CGFloat = UIScreen.main.bounds.width - 42
+		
 		VStack(spacing: 20) {
 			HStack {
 				Text("Balanço")
@@ -24,21 +25,20 @@ struct ProgressBar: View {
 			}
 			
 			Color("progressbar")
-				.frame(width: tapped ? 300 : 68, height: 15)
+				.frame(width: tapped ? WIDTH : 68, height: 15)
 				.clipShape(RoundedRectangle(cornerRadius: 20, style: .continuous))
-				.frame(width: 300, height: 15, alignment: .leading)
+				.frame(width: WIDTH, height: 15, alignment: .leading)
 				.animation(.spring(response: 0.45, dampingFraction: 0.7, blendDuration: 0))
 				.onTapGesture {
 					self.tapped = !self.tapped
 				}
 				.background(Color("black-faded"))
 				.clipShape(RoundedRectangle(cornerRadius: 20, style: .continuous))
-				.padding()
-				.frame(width: 310, height:25)
+				.frame(width: WIDTH + 10, height:25)
 				.background(Color("black-faded-2"))
 				.clipShape(RoundedRectangle(cornerRadius: 20, style: .continuous))
 			
-			HStack(spacing: 39) {
+			HStack {
 				HStack {
 					Image("arrow_down")
 						.resizable()
@@ -51,8 +51,9 @@ struct ProgressBar: View {
 						Text("R$ 1.299,99")
 							.font(.headline)
 					}
-					.frame(width: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/)
+					.frame(width: 100)
 				}
+				Spacer()
 				HStack {
 					Image("arrow_down_faded")
 						.resizable()
@@ -65,11 +66,11 @@ struct ProgressBar: View {
 						Text("R$ 4.299,99")
 							.font(.headline)
 					}
-					.frame(width: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/)
+					.frame(width: 100)
 				}
 			}
 		}
-		.padding(.horizontal, HORIZONTAL_PADDING)
+		.padding(.horizontal)
     }
 }
 
