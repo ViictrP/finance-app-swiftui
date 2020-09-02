@@ -22,7 +22,7 @@ struct CreditCardCarousel: View {
 		
 		return Carousel(numberOfItems: CGFloat( items.count ), spacing: spacing, widthOfHiddenCards: widthOfHiddenCards) {
 			ForEach(items.indices, id: \.self) { index in
-				CreditCardItem(creditCard: items[index])
+                CreditCardItem(creditCard: self.items[index])
 			}
 		}
 		.frame(width: UIScreen.main.bounds.width)

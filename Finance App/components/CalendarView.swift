@@ -30,7 +30,7 @@ struct CalendarView: View {
 						if self.month.arrayIndex == CalendarMonths.DECEMBER.arrayIndex {
 							self.year -= 1
 						}
-						self.delegate?.onPreviousMonth(month: self.month.calendarIndex, year: year)
+                        self.delegate?.onPreviousMonth(month: self.month.calendarIndex, year: self.year)
 					}, label: {
 						Image("back")
 							.resizable()

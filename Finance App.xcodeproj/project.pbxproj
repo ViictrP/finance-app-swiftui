@@ -27,6 +27,9 @@
 		44E3D57C24F6C95E00D37DD8 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 44E3D57B24F6C95E00D37DD8 /* Preview Assets.xcassets */; };
 		44E3D57F24F6C95E00D37DD8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 44E3D57D24F6C95E00D37DD8 /* LaunchScreen.storyboard */; };
 		44E3D58A24F6C95E00D37DD8 /* Finance_AppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44E3D58924F6C95E00D37DD8 /* Finance_AppTests.swift */; };
+		570BC9F224FF125100CFD18F /* TransactionFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570BC9F124FF125100CFD18F /* TransactionFormView.swift */; };
+		570BC9F624FF1D7E00CFD18F /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570BC9F524FF1D7E00CFD18F /* Transaction.swift */; };
+		570BC9F824FF23E200CFD18F /* Invoice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570BC9F724FF23E200CFD18F /* Invoice.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +67,9 @@
 		44E3D58524F6C95E00D37DD8 /* Finance AppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Finance AppTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		44E3D58924F6C95E00D37DD8 /* Finance_AppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Finance_AppTests.swift; sourceTree = "<group>"; };
 		44E3D58B24F6C95E00D37DD8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		570BC9F124FF125100CFD18F /* TransactionFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionFormView.swift; sourceTree = "<group>"; };
+		570BC9F524FF1D7E00CFD18F /* Transaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transaction.swift; sourceTree = "<group>"; };
+		570BC9F724FF23E200CFD18F /* Invoice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Invoice.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,7 +136,6 @@
 		44A246E824FC673200D96994 /* core */ = {
 			isa = PBXGroup;
 			children = (
-				44A246EB24FC679000D96994 /* entity */,
 			);
 			path = core;
 			sourceTree = "<group>";
@@ -138,6 +143,7 @@
 		44A246E924FC673600D96994 /* dataprovider */ = {
 			isa = PBXGroup;
 			children = (
+				44A246EB24FC679000D96994 /* entity */,
 			);
 			path = dataprovider;
 			sourceTree = "<group>";
@@ -146,6 +152,8 @@
 			isa = PBXGroup;
 			children = (
 				44A246EC24FC679E00D96994 /* CreditCard.swift */,
+				570BC9F524FF1D7E00CFD18F /* Transaction.swift */,
+				570BC9F724FF23E200CFD18F /* Invoice.swift */,
 			);
 			path = entity;
 			sourceTree = "<group>";
@@ -228,6 +236,7 @@
 			children = (
 				44E3D57624F6C95D00D37DD8 /* CreditCardView.swift */,
 				444CD3AB24FC566000DFAC80 /* HomeView.swift */,
+				570BC9F124FF125100CFD18F /* TransactionFormView.swift */,
 			);
 			path = views;
 			sourceTree = "<group>";
@@ -351,9 +360,12 @@
 				4409643224F88A91004D117D /* Canvas.swift in Sources */,
 				44E3D57324F6C95D00D37DD8 /* AppDelegate.swift in Sources */,
 				4474AE1824F9F659005D72B1 /* DateExtension.swift in Sources */,
+				570BC9F624FF1D7E00CFD18F /* Transaction.swift in Sources */,
 				44E3D57524F6C95D00D37DD8 /* SceneDelegate.swift in Sources */,
 				4409642E24F888EA004D117D /* Card.swift in Sources */,
+				570BC9F824FF23E200CFD18F /* Invoice.swift in Sources */,
 				44AA805424F9592400274302 /* ProgressBar.swift in Sources */,
+				570BC9F224FF125100CFD18F /* TransactionFormView.swift in Sources */,
 				4409643424F88AE5004D117D /* Item.swift in Sources */,
 				4409643024F8893E004D117D /* Carousel.swift in Sources */,
 				44E3D57724F6C95D00D37DD8 /* CreditCardView.swift in Sources */,
