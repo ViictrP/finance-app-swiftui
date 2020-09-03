@@ -50,7 +50,7 @@ struct DropDown : View {
     @State private var innerSelection: String = ""
     
     var body: some View {
-        VStack(alignment: .leading, spacing: 20, content: {
+        VStack(alignment: .leading, spacing: 1, content: {
             HStack {
                 Text(title)
                     .font(.headline)
@@ -61,15 +61,18 @@ struct DropDown : View {
                 Text(innerSelection)
                     .foregroundColor(Color.white.opacity(0.8))
                 
-                
                 if innerSelection != "" {
                     Button(action: {
                         self.innerSelection = ""
                     }, label: {
-                        Image(systemName: expand ? "chevron.up" : "chevron.down")
-                            .resizable()
-                            .frame(width: 13, height: 6)
-                            .foregroundColor(.white)
+                        VStack {
+                            Image("times-circle-solid")
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
+                                .foregroundColor(.white)
+                        }
+                        .frame(width: 18, height: 18)
+                            
                     })
                 } else {
                     Image(systemName: expand ? "chevron.up" : "chevron.down")
@@ -78,7 +81,7 @@ struct DropDown : View {
                         .foregroundColor(.white)
                 }
             }
-            
+            .padding()
             
             if expand {
                 ForEach(items) { item in
@@ -100,15 +103,18 @@ struct DropDown : View {
                             Text(item.title)
                         })
                         .foregroundColor(.white)
+                        Spacer()
                     }
+                    .padding()
+                    .background(Color.white.opacity(0.2))
                 }
             }
         })
-        .padding()
-        .background(LinearGradient(gradient: .init(colors: [.blue, .blue]), startPoint: .top, endPoint: .bottom))
+        .background(LinearGradient(gradient: .init(colors: [Color("main"), Color("main")]), startPoint: .top, endPoint: .bottom))
         .clipShape(RoundedRectangle(cornerRadius: 20, style: .continuous))
         .shadow(color: Color.black.opacity(expand ? 0.3 : 0), radius: 10, x: 0.0, y: 5)
         .animation(.spring(response: 0.3, dampingFraction: 0.6, blendDuration: 0.5))
+//        .animation(.easeInOut(duration: 0.2))
         .onTapGesture {
             self.expand.toggle()
         }
