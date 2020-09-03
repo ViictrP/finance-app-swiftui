@@ -30,6 +30,8 @@
 		570BC9F224FF125100CFD18F /* TransactionFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570BC9F124FF125100CFD18F /* TransactionFormView.swift */; };
 		570BC9F624FF1D7E00CFD18F /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570BC9F524FF1D7E00CFD18F /* Transaction.swift */; };
 		570BC9F824FF23E200CFD18F /* Invoice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570BC9F724FF23E200CFD18F /* Invoice.swift */; };
+		577E3445250123420093403B /* DropDown.swift in Sources */ = {isa = PBXBuildFile; fileRef = 577E3444250123420093403B /* DropDown.swift */; };
+		577E344A250123C50093403B /* DropDownItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 577E3449250123C50093403B /* DropDownItem.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,6 +72,8 @@
 		570BC9F124FF125100CFD18F /* TransactionFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionFormView.swift; sourceTree = "<group>"; };
 		570BC9F524FF1D7E00CFD18F /* Transaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transaction.swift; sourceTree = "<group>"; };
 		570BC9F724FF23E200CFD18F /* Invoice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Invoice.swift; sourceTree = "<group>"; };
+		577E3444250123420093403B /* DropDown.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropDown.swift; sourceTree = "<group>"; };
+		577E3449250123C50093403B /* DropDownItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropDownItem.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +97,7 @@
 		4409642C24F888DA004D117D /* Structs */ = {
 			isa = PBXGroup;
 			children = (
+				577E3448250123B50093403B /* DropDown */,
 				4474AE1324F9EA0F005D72B1 /* Calendar */,
 				4409643524F88C95004D117D /* Carousel */,
 			);
@@ -167,6 +172,7 @@
 				44919F6524F95ADA003EDAF6 /* Transactions.swift */,
 				4474AE1124F9DE0F005D72B1 /* CalendarView.swift */,
 				44E2ABF524FABC3600EBABED /* TransactionItem.swift */,
+				577E3444250123420093403B /* DropDown.swift */,
 			);
 			path = components;
 			sourceTree = "<group>";
@@ -249,6 +255,14 @@
 				44E3D57424F6C95D00D37DD8 /* SceneDelegate.swift */,
 			);
 			path = config;
+			sourceTree = "<group>";
+		};
+		577E3448250123B50093403B /* DropDown */ = {
+			isa = PBXGroup;
+			children = (
+				577E3449250123C50093403B /* DropDownItem.swift */,
+			);
+			path = DropDown;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -362,6 +376,7 @@
 				4474AE1824F9F659005D72B1 /* DateExtension.swift in Sources */,
 				570BC9F624FF1D7E00CFD18F /* Transaction.swift in Sources */,
 				44E3D57524F6C95D00D37DD8 /* SceneDelegate.swift in Sources */,
+				577E3445250123420093403B /* DropDown.swift in Sources */,
 				4409642E24F888EA004D117D /* Card.swift in Sources */,
 				570BC9F824FF23E200CFD18F /* Invoice.swift in Sources */,
 				44AA805424F9592400274302 /* ProgressBar.swift in Sources */,
@@ -370,6 +385,7 @@
 				4409643024F8893E004D117D /* Carousel.swift in Sources */,
 				44E3D57724F6C95D00D37DD8 /* CreditCardView.swift in Sources */,
 				44AAD34F24F883D0002C9722 /* CreditCardCarousel.swift in Sources */,
+				577E344A250123C50093403B /* DropDownItem.swift in Sources */,
 				44E2ABF624FABC3600EBABED /* TransactionItem.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
