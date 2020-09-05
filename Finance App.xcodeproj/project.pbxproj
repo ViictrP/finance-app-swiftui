@@ -30,6 +30,7 @@
 		570BC9F224FF125100CFD18F /* TransactionFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570BC9F124FF125100CFD18F /* TransactionFormView.swift */; };
 		570BC9F624FF1D7E00CFD18F /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570BC9F524FF1D7E00CFD18F /* Transaction.swift */; };
 		570BC9F824FF23E200CFD18F /* Invoice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570BC9F724FF23E200CFD18F /* Invoice.swift */; };
+		577B7D292501575C00100EE7 /* CreditCardStackCarousel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 577B7D282501575C00100EE7 /* CreditCardStackCarousel.swift */; };
 		577E3445250123420093403B /* DropDown.swift in Sources */ = {isa = PBXBuildFile; fileRef = 577E3444250123420093403B /* DropDown.swift */; };
 		577E344A250123C50093403B /* DropDownItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 577E3449250123C50093403B /* DropDownItem.swift */; };
 /* End PBXBuildFile section */
@@ -72,6 +73,7 @@
 		570BC9F124FF125100CFD18F /* TransactionFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionFormView.swift; sourceTree = "<group>"; };
 		570BC9F524FF1D7E00CFD18F /* Transaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transaction.swift; sourceTree = "<group>"; };
 		570BC9F724FF23E200CFD18F /* Invoice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Invoice.swift; sourceTree = "<group>"; };
+		577B7D282501575C00100EE7 /* CreditCardStackCarousel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditCardStackCarousel.swift; sourceTree = "<group>"; };
 		577E3444250123420093403B /* DropDown.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropDown.swift; sourceTree = "<group>"; };
 		577E3449250123C50093403B /* DropDownItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropDownItem.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -173,6 +175,7 @@
 				4474AE1124F9DE0F005D72B1 /* CalendarView.swift */,
 				44E2ABF524FABC3600EBABED /* TransactionItem.swift */,
 				577E3444250123420093403B /* DropDown.swift */,
+				577B7D282501575C00100EE7 /* CreditCardStackCarousel.swift */,
 			);
 			path = components;
 			sourceTree = "<group>";
@@ -383,6 +386,7 @@
 				570BC9F224FF125100CFD18F /* TransactionFormView.swift in Sources */,
 				4409643424F88AE5004D117D /* Item.swift in Sources */,
 				4409643024F8893E004D117D /* Carousel.swift in Sources */,
+				577B7D292501575C00100EE7 /* CreditCardStackCarousel.swift in Sources */,
 				44E3D57724F6C95D00D37DD8 /* CreditCardView.swift in Sources */,
 				44AAD34F24F883D0002C9722 /* CreditCardCarousel.swift in Sources */,
 				577E344A250123C50093403B /* DropDownItem.swift in Sources */,

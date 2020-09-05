@@ -18,24 +18,25 @@ struct TransactionFormView: View {
     @State var tapped = false
     
     var body: some View {
-        ZStack {
-            VStack {
-                TextField("Título", text: $title)
-                
-                TextField("Título", text: $title)
-                
-                TextField("Título", text: $title)
-                
-                TextField("Título", text: $title)
-            }
-            
-            DropDown(title: "categoria", items: [
-                DropDownItem(id: 1, title: "DELIVERY", icon: Image("motorcycle-solid")),
-                DropDownItem(id: 2, title: "ONLINE", icon: Image("globe-americas-solid")),
-                DropDownItem(id: 3, title: "MAQUININHA", icon: Image("mobile-alt-solid"))
-            ], selected: self.category)
-        }
-        .padding()
+        CreditCardStackCarousel(items: [StackItem(id: 0, creditCard: CreditCard(id: 1, name: "Nubank", closeDay: 10, number: "5966", limit: 4250.00, availableLimit: 4250.00), offset: 0)])
+//        ZStack {
+//            VStack {
+//                TextField("Título", text: $title)
+//
+//                TextField("Título", text: $title)
+//
+//                TextField("Título", text: $title)
+//
+//                TextField("Título", text: $title)
+//            }
+//
+//            DropDown(title: "categoria", items: [
+//                DropDownItem(id: 1, title: "DELIVERY", icon: Image("motorcycle-solid")),
+//                DropDownItem(id: 2, title: "ONLINE", icon: Image("globe-americas-solid")),
+//                DropDownItem(id: 3, title: "MAQUININHA", icon: Image("mobile-alt-solid"))
+//            ], selected: self.category)
+//        }
+//        .padding()
     }
 }
 
