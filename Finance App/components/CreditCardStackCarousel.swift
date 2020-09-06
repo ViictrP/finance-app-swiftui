@@ -19,14 +19,21 @@ struct CreditCardStackCarousel: View {
                         
                         ZStack{
                             
-                            Color("main")
+                            Rectangle()
+                                .strokeBorder(Color.white.opacity(0.1),lineWidth: 1)
+                                .background(Rectangle().foregroundColor(Color("main")))
                                 .frame(width: width, height: getHeight(index: item.id))
-                                .cornerRadius(25)
+                                .clipShape(RoundedRectangle(cornerRadius: 20, style: .continuous))
                                 // Little Shadow...
-                                .shadow(color: Color.black.opacity(0.1), radius: 5, x: 5)
+                                .shadow(color: Color.black.opacity(0.1), radius: 5, x: 1)
+                            
+                            Image("creditcard-pattern1")
+                                .frame(width: width, height: getHeight(index: item.id))
+                                .clipShape(RoundedRectangle(cornerRadius: 20, style: .continuous))
+                                .opacity(0.045)
                             
                             // Read More Button...
-                            
+
                             Content(card: item)
                                 .frame(width: width, height: getHeight(index: item.id))
                         }
@@ -135,11 +142,11 @@ struct CreditCardStackCarousel: View {
 struct CreditCardStackCarousel_Previews: PreviewProvider {
     static var previews: some View {
         CreditCardStackCarousel(items: [
-            StackItem(id: 0, creditCard: CreditCard(id: 1, name: "Nubank", closeDay: 10, number: "5966", limit: 4250, availableLimit: 4250), offset: 0),
-            StackItem(id: 1, creditCard: CreditCard(id: 1, name: "Nubank", closeDay: 10, number: "5966", limit: 4250, availableLimit: 4250), offset: 0),
-            StackItem(id: 2, creditCard: CreditCard(id: 1, name: "Nubank", closeDay: 10, number: "5966", limit: 4250, availableLimit: 4250), offset: 0),
-            StackItem(id: 3, creditCard: CreditCard(id: 1, name: "Nubank", closeDay: 10, number: "5966", limit: 4250, availableLimit: 4250), offset: 0),
-            StackItem(id: 4, creditCard: CreditCard(id: 1, name: "Nubank", closeDay: 10, number: "5966", limit: 4250, availableLimit: 4250), offset: 0)
+            StackItem(id: 0, creditCard: CreditCard(id: 1, name: "Nubank", closeDay: 10, number: "5966", limit: 4250, availableLimit: 4250.96), offset: 0),
+            StackItem(id: 1, creditCard: CreditCard(id: 1, name: "Nubank", closeDay: 10, number: "5966", limit: 4250, availableLimit: 4250.96), offset: 0),
+            StackItem(id: 2, creditCard: CreditCard(id: 1, name: "Nubank", closeDay: 10, number: "5966", limit: 4250, availableLimit: 4250.96), offset: 0),
+            StackItem(id: 3, creditCard: CreditCard(id: 1, name: "Nubank", closeDay: 10, number: "5966", limit: 4250, availableLimit: 4250.96), offset: 0),
+            StackItem(id: 4, creditCard: CreditCard(id: 1, name: "Nubank", closeDay: 10, number: "5966", limit: 4250, availableLimit: 4250.96), offset: 0)
         ])
     }
 }
@@ -149,6 +156,7 @@ struct Content : View {
     var card : StackItem
     
     var body: some View{
+        let creditCard = card.creditCard
         
         VStack{
             
@@ -156,21 +164,55 @@ struct Content : View {
             // I'm displaying only read button....
             Spacer(minLength: 0)
             
-            HStack{
+            VStack {
+                Spacer()
                 
-                Button(action: {}) {
+                VStack(alignment: .leading) {
+                    Text("valor disponível")
+                        .font(.headline)
+                        .foregroundColor(Color.white.opacity(0.5))
                     
-                    Text("Read Now")
-                        .font(.system(size: 14))
-                        .fontWeight(.bold)
+                    Text("R$ \(creditCard.availableLimit)".replacingOccurrences(of: ",", with: "").replacingOccurrences(of: ".", with: ","))
+                        .font(.title)
+                        .fontWeight(.heavy)
                         .foregroundColor(.white)
-                        .padding(.vertical,5)
-                        .padding(.horizontal,10)
-                        .background(Color.gray)
-                        .clipShape(Capsule())
                 }
                 
-                Spacer(minLength: 0)
+                Spacer()
+                
+                HStack {
+                    VStack(alignment: .leading, spacing: 10) {
+                        Text("\(creditCard.name)")
+                            .font(.title)
+                            .foregroundColor(.white)
+                        
+                        HStack(alignment: .bottom, spacing: 10) {
+                            Text("\(creditCard.number)")
+                                .font(.system(size: 22))
+                                .fontWeight(.heavy)
+                                .foregroundColor(.white)
+                            
+                            Spacer(minLength: 0)
+                            
+                            VStack {
+                                Text("fechamento")
+                                    .font(.headline)
+                                    .foregroundColor(Color.white.opacity(0.5))
+                                
+                                Text("dia \(creditCard.closeDay)")
+                                    .font(.headline)
+                                    .fontWeight(.heavy)
+                                    .foregroundColor(.white)
+                            }
+                        }
+                        
+                    }
+                    
+                    Spacer()
+                    
+                    
+                    
+                }
             }
             .padding()
             .padding(.bottom,10)

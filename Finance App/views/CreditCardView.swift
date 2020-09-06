@@ -10,6 +10,7 @@ import SwiftUI
 
 struct CreditCardView: View, CalendarMonthChanged {
 	let uiState: UIStateModel = UIStateModel()
+    @State var stack = false
 	@State var month: Int = 0
 	@State var year: Int = 0
 	var creditCards: [CreditCard] = [
@@ -38,17 +39,30 @@ struct CreditCardView: View, CalendarMonthChanged {
 							.font(.system(.title))
 							.bold()
 						Spacer()
-						Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/, label: {
-							Image("plus-solid")
-								.resizable()
-								.aspectRatio(contentMode: .fit)
-						})
-						.frame(width: 24, height: 24)
+                        HStack(spacing: 30) {
+                            Button(action: { stack.toggle() }, label: {
+                                Image(stack ? "stack" : "carousel")
+                                    .resizable()
+                                    .aspectRatio(contentMode: .fit)
+                                    .foregroundColor(Color("main"))
+                            })
+                            .frame(width: 24, height: 24)
+                            
+                            Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/, label: {
+                                Image("plus-solid")
+                                    .resizable()
+                                    .aspectRatio(contentMode: .fit)
+                            })
+                            .frame(width: 24, height: 24)
+                        }
 					}
 					.padding(.horizontal)
 					
-//					CreditCardCarousel(items: creditCards)
-                    CreditCardStackCarousel(items: CreditCardStackCarousel.toStackItems(creditCards: creditCards))
+                    if stack {
+                        CreditCardStackCarousel(items: CreditCardStackCarousel.toStackItems(creditCards: creditCards))
+                    } else {
+                        CreditCardCarousel(items: creditCards)
+                    }
 				}
 				
 				CalendarView(delegate: self)
