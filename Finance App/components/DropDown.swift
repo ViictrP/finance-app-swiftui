@@ -12,9 +12,11 @@ struct DropDown : View {
     var title: String
     var items: [DropDownItem]
     
+    @State var required = false
     @State private var expand = false
     @State var selected: Int = 0
     @State private var innerSelection: String = ""
+    @State private var dirty = false
     
     var body: some View {
         VStack(alignment: .leading, spacing: 1, content: {
@@ -84,7 +86,14 @@ struct DropDown : View {
         // .animation(.easeInOut(duration: 0.2))
         .onTapGesture {
             self.expand.toggle()
+            self.dirty = true
         }
+        .overlay(
+            RoundedRectangle(cornerRadius: 20)
+                .stroke(lineWidth: dirty && innerSelection.isEmpty && !expand && required ? 3 : 0)
+                .foregroundColor(Color.red)
+                .animation(.spring(response: 0.3, dampingFraction: 0.6, blendDuration: 0.5))
+        )
     }
 }
 
