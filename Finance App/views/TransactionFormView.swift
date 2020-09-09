@@ -11,8 +11,9 @@ import SwiftUI
 struct TransactionFormView: View {
     @State var title: String = ""
     @State var description: String = ""
-    @State var when: Date = Date()
-    @State var value: Double = 0.0
+    @State var when: String = ""
+    @State var value: String = "
+    @State var parcelAmount: String = "1"
     @State var category: Int = 0
     
     @State var tapped = false
@@ -22,35 +23,38 @@ struct TransactionFormView: View {
             VStack(alignment: .leading, spacing: 30) {
                 Title()
                 
-                ZStack {
-                    VStack(alignment: .leading, spacing: 15) {
-                        InputText(placeholder: "título...", icon: Image("text"), text: $title, required: true)
+                VStack(spacing: 20) {
+                    InputText(placeholder: "título", icon: Image("text"), type: "text", text: $title, required: true)
 
-                        InputText(placeholder: "descrição...", icon: Image("text"), text: $description, required: true)
+                    InputText(placeholder: "descrição", icon: Image("text"), type: "text", text: $description, required: true)
 
-                        InputText(placeholder: "valor...", icon: Image("money-wave"), text: $title, required: true)
+                    InputText(placeholder: "valor", icon: Image("money-wave"), type: "currency", text: $value, required: true)
 
-                        InputText(placeholder: "quando...", icon: Image("calendar"), text: $title, required: true)
-                    }
+                    InputText(placeholder: "quando", icon: Image("calendar"), type: "date", text: $when, required: true)
+                    
+                    InputText(placeholder: "qtde parcelas", icon: Image("calendar"), type: "number", text: $parcelAmount, required: true)
 
                     DropDown(title: "categoria", items: [
                         DropDownItem(id: 1, title: "DELIVERY", icon: Image("motorcycle-solid")),
                         DropDownItem(id: 2, title: "ONLINE", icon: Image("globe-americas-solid")),
                         DropDownItem(id: 3, title: "MAQUININHA", icon: Image("mobile-alt-solid"))
                     ], required: true, selected: self.category)
+                    .zIndex(1)
+                    
+                    Spacer()
                     
                     Button(action: {}, label: {
                         Text("salvar")
                             .foregroundColor(.white)
                             .font(.system(size: 22))
                     })
-                    
                     .frame(width: 300)
                     .padding(.horizontal)
                     .padding(.vertical, 10)
                     .background(Color("main"))
                     .clipShape(RoundedRectangle(cornerRadius: 20, style: .continuous))
-                    .offset(x: 0, y: 300)
+                    .animation(.easeInOut(duration: 0.3))
+                    
                 }
             }
             .padding()
@@ -67,13 +71,15 @@ struct TransactionFormView_Previews: PreviewProvider {
 struct InputText: View {
     var placeholder: String
     var icon: Image?
+    var type: String
+    
     @Binding var text: String
     @State var required: Bool
     @State private var dirty: Bool = false
     @State private var valid = false
     
     var body: some View {
-        VStack {
+        VStack(alignment: .leading) {
             ZStack(alignment: .trailing) {
                 HStack {
                     if icon != nil {
@@ -84,7 +90,10 @@ struct InputText: View {
                             .opacity(0.2)
                             
                     }
-                    TextField("\(placeholder)", text: $text) { isEditing in
+
+                    
+                    TextField("\(placeholder) \(required ? "*" : "")", text: $text) { (isEditing) in
+
                         if isEditing {
                             valid = true
                         }
@@ -98,6 +107,11 @@ struct InputText: View {
                         }
                     }
                     .font(.system(size: 22))
+                    .keyboardType(
+                        type == "number" || type == "currency" ? .numberPad :
+                        type == "text" ? .default :
+                        type == "date" ? .numbersAndPunctuation : .default
+                    )
                 }
                     
                 

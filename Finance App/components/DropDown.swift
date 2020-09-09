@@ -21,7 +21,7 @@ struct DropDown : View {
     var body: some View {
         VStack(alignment: .leading, spacing: 1, content: {
             HStack {
-                Text(title)
+                Text("\(title) \(required ? "*" : "")")
                     .font(.headline)
                     .foregroundColor(.white)
                 
@@ -99,6 +99,6 @@ struct DropDown : View {
 
 struct DropDown_Previews: PreviewProvider {
     static var previews: some View {
-        DropDown(title: "selecione", items: [DropDownItem(id: 1, title: "OPTION")])
+        DropDown(title: "selecione", items: [DropDownItem(id: 1, title: "OPTION")], required: true)
     }
 }
