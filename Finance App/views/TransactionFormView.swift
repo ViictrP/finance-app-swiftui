@@ -12,7 +12,7 @@ struct TransactionFormView: View {
     @State var title: String = ""
     @State var description: String = ""
     @State var when: String = ""
-    @State var value: String = "
+    @State var value: String = ""
     @State var parcelAmount: String = "1"
     @State var category: Int = 0
     
