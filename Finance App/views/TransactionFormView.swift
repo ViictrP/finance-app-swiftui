@@ -32,7 +32,7 @@ struct TransactionFormView: View {
 
                     InputText(placeholder: "quando", icon: Image("calendar"), type: "date", text: $when, required: true)
                     
-                    InputText(placeholder: "qtde parcelas", icon: Image("calendar"), type: "number", text: $parcelAmount, required: true)
+                    InputText(placeholder: "qtde parcelas", icon: Image("copy-solid"), type: "number", text: $parcelAmount, required: true)
 
                     DropDown(title: "categoria", items: [
                         DropDownItem(id: 1, title: "DELIVERY", icon: Image("motorcycle-solid")),
@@ -74,11 +74,23 @@ struct InputText: View {
     var type: String
     
     @Binding var text: String
+    @State private var value: Double? = 0.0
     @State var required: Bool
     @State private var dirty: Bool = false
     @State private var valid = false
     
     var body: some View {
+        let binding = Binding<Double?>(
+            get: {
+                print(self.text)
+                return Double(self.text)
+            },
+            set: {
+                self.text = String($0!)
+            }
+        )
+        
+        
         VStack(alignment: .leading) {
             ZStack(alignment: .trailing) {
                 HStack {
@@ -91,27 +103,49 @@ struct InputText: View {
                             
                     }
 
-                    
-                    TextField("\(placeholder) \(required ? "*" : "")", text: $text) { (isEditing) in
-
-                        if isEditing {
-                            valid = true
+                    if type == "number" || type == "currency" {
+                        CurrencyTextField("\(placeholder) \(required ? "*" : "")", value: binding, onEditingChanged:  { (isEditing) in
+                            
+                            if isEditing {
+                                valid = true
+                            }
+                            
+                            if !isEditing && !text.isEmpty {
+                                valid = true
+                            }
+                            if !isEditing && text.isEmpty {
+                                valid = false
+                                dirty = true
+                            }
+                        })
+                        .font(.title)
+                        .keyboardType(
+                            type == "number" || type == "currency" ? .numberPad :
+                                type == "text" ? .default :
+                                type == "date" ? .numbersAndPunctuation : .default
+                        )
+                    } else {
+                        TextField("\(placeholder) \(required ? "*" : "")", text: $text) { (isEditing) in
+                            
+                            if isEditing {
+                                valid = true
+                            }
+                            
+                            if !isEditing && !text.isEmpty {
+                                valid = true
+                            }
+                            if !isEditing && text.isEmpty {
+                                valid = false
+                                dirty = true
+                            }
                         }
-                        
-                        if !isEditing && !text.isEmpty {
-                            valid = true
-                        }
-                        if !isEditing && text.isEmpty {
-                            valid = false
-                            dirty = true
-                        }
+                        .font(.title)
+                        .keyboardType(
+                            type == "number" || type == "currency" ? .numberPad :
+                                type == "text" ? .default :
+                                type == "date" ? .numbersAndPunctuation : .default
+                        )
                     }
-                    .font(.system(size: 22))
-                    .keyboardType(
-                        type == "number" || type == "currency" ? .numberPad :
-                        type == "text" ? .default :
-                        type == "date" ? .numbersAndPunctuation : .default
-                    )
                 }
                     
                 
