@@ -22,7 +22,7 @@ struct DropDown : View {
         VStack(alignment: .leading, spacing: 1, content: {
             HStack {
                 Text("\(title) \(required ? "*" : "")")
-                    .font(.headline)
+                    .font(.title)
                     .foregroundColor(.white)
                 
                 Spacer()
@@ -90,8 +90,8 @@ struct DropDown : View {
         }
         .overlay(
             RoundedRectangle(cornerRadius: 20)
-                .stroke(lineWidth: dirty && innerSelection.isEmpty && !expand && required ? 3 : 0)
-                .foregroundColor(Color.red)
+                .stroke(lineWidth: 3)
+                .foregroundColor(dirty && innerSelection.isEmpty && !expand && required ? Color.red : Color("Fadded-text"))
                 .animation(.spring(response: 0.3, dampingFraction: 0.6, blendDuration: 0.5))
         )
     }
