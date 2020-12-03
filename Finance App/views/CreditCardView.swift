@@ -48,12 +48,12 @@ struct CreditCardView: View, CalendarMonthChanged {
                             })
                             .frame(width: 24, height: 24)
                             
-                            Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/, label: {
+                            Button(action: {}, label: {
                                 Image("plus-solid")
                                     .resizable()
                                     .aspectRatio(contentMode: .fit)
                             })
-//                            .sheet(item: T##Binding<Identifiable?>, content: T##(Identifiable) -> View)
+                            //                            .sheet(item: T##Binding<Identifiable?>, content: T##(Identifiable) -> View)
                             .frame(width: 24, height: 24)
                         }
                     }
