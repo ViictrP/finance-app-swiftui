@@ -31,48 +31,50 @@ struct CreditCardView: View, CalendarMonthChanged {
     }
     
     var body: some View {
-        ScrollView(.vertical, showsIndicators: false) {
-            VStack(alignment: .center, spacing: 50) {
-                VStack(spacing: 30) {
-                    HStack {
-                        Text("Seus cartões")
-                            .font(.system(.title))
-                            .bold()
-                        Spacer()
-                        HStack(spacing: 30) {
-                            Button(action: { stack.toggle() }, label: {
-                                Image(stack ? "stack" : "carousel")
-                                    .resizable()
-                                    .aspectRatio(contentMode: .fit)
-                                    .foregroundColor(Color("main"))
-                            })
-                            .frame(width: 24, height: 24)
-                            
-                            Button(action: {}, label: {
-                                Image("plus-solid")
-                                    .resizable()
-                                    .aspectRatio(contentMode: .fit)
-                            })
-                            //                            .sheet(item: T##Binding<Identifiable?>, content: T##(Identifiable) -> View)
-                            .frame(width: 24, height: 24)
+        NavigationView {
+            ScrollView(.vertical, showsIndicators: false) {
+                VStack(alignment: .center, spacing: 50) {
+                    VStack(spacing: 30) {
+                        HStack {
+                            Text("Seus cartões")
+                                .font(.system(.title))
+                                .bold()
+                            Spacer()
+                            HStack(spacing: 30) {
+                                Button(action: { stack.toggle() }, label: {
+                                    Image(stack ? "stack" : "carousel")
+                                        .resizable()
+                                        .aspectRatio(contentMode: .fit)
+                                        .foregroundColor(Color("main"))
+                                })
+                                .frame(width: 24, height: 24)
+                                
+                                Button(action: {}, label: {
+                                    Image("plus-solid")
+                                        .resizable()
+                                        .aspectRatio(contentMode: .fit)
+                                })
+                                .frame(width: 24, height: 24)
+                            }
+                        }
+                        .padding(.horizontal)
+                        
+                        if stack {
+                            CreditCardStackCarousel(items: CreditCardStackCarousel.toStackItems(creditCards: creditCards))
+                        } else {
+                            CreditCardCarousel(items: creditCards)
                         }
                     }
-                    .padding(.horizontal)
                     
-                    if stack {
-                        CreditCardStackCarousel(items: CreditCardStackCarousel.toStackItems(creditCards: creditCards))
-                    } else {
-                        CreditCardCarousel(items: creditCards)
-                    }
+                    CalendarView(delegate: self)
+                    
+                    ProgressBar()
+                    
+                    Transactions()
                 }
-                
-                CalendarView(delegate: self)
-                
-                ProgressBar()
-                
-                Transactions()
+                .padding(.top, 30)
             }
-            .padding(.top, 30)
+            .navigationBarHidden(true)
         }
     }
 }

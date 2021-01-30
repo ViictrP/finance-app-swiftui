@@ -33,6 +33,13 @@ struct TransactionFormView: View {
                     Title()
                     
                     VStack(spacing: 20) {
+                        DropDown(title: "categoria", items: [
+                            DropDownItem(id: 1, title: "DELIVERY", icon: Image("motorcycle-solid")),
+                            DropDownItem(id: 2, title: "ONLINE", icon: Image("globe-americas-solid")),
+                            DropDownItem(id: 3, title: "MAQUININHA", icon: Image("mobile-alt-solid"))
+                        ], required: true, selected: self.category)
+                        .zIndex(1)
+                        
                         Input(placeholder: "título", icon: Image("text"), type: "text", text: $title, required: true)
 
                         Input(placeholder: "descrição", icon: Image("text"), type: "text", text: $description, required: true)
@@ -43,19 +50,15 @@ struct TransactionFormView: View {
                         
                         DatePickerInput(placeholder: "quando", icon: Image("calendar"), type: "date", date: $when, required: true)
 
-                        DropDown(title: "categoria", items: [
-                            DropDownItem(id: 1, title: "DELIVERY", icon: Image("motorcycle-solid")),
-                            DropDownItem(id: 2, title: "ONLINE", icon: Image("globe-americas-solid")),
-                            DropDownItem(id: 3, title: "MAQUININHA", icon: Image("mobile-alt-solid"))
-                        ], required: true, selected: self.category)
-                        .zIndex(1)
+                        
                         
                         Button(action: { self.save() }, label: {
+                            Spacer()
                             Text("salvar")
                                 .foregroundColor(.white)
                                 .font(.system(size: 22))
+                            Spacer()
                         })
-                        .frame(width: 300)
                         .padding(.horizontal)
                         .padding(.vertical, 10)
                         .background(Color("main"))
