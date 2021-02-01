@@ -27,6 +27,9 @@
 		44E3D57C24F6C95E00D37DD8 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 44E3D57B24F6C95E00D37DD8 /* Preview Assets.xcassets */; };
 		44E3D57F24F6C95E00D37DD8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 44E3D57D24F6C95E00D37DD8 /* LaunchScreen.storyboard */; };
 		44E3D58A24F6C95E00D37DD8 /* Finance_AppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44E3D58924F6C95E00D37DD8 /* Finance_AppTests.swift */; };
+		5702CD3C25C897130076D435 /* UICarrouselStateModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5702CD3B25C897120076D435 /* UICarrouselStateModel.swift */; };
+		5702CD4325C89C4A0076D435 /* CreditCardCarouselDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5702CD4225C89C4A0076D435 /* CreditCardCarouselDelegate.swift */; };
+		5702CD4B25C8A5240076D435 /* CreditCardStackCarouselDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5702CD4A25C8A5240076D435 /* CreditCardStackCarouselDelegate.swift */; };
 		57043C8825103EF2006DBAB0 /* NumberTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57043C8725103EF2006DBAB0 /* NumberTextField.swift */; };
 		570BC9F224FF125100CFD18F /* TransactionFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570BC9F124FF125100CFD18F /* TransactionFormView.swift */; };
 		570BC9F624FF1D7E00CFD18F /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570BC9F524FF1D7E00CFD18F /* Transaction.swift */; };
@@ -76,6 +79,9 @@
 		44E3D58524F6C95E00D37DD8 /* Finance AppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Finance AppTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		44E3D58924F6C95E00D37DD8 /* Finance_AppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Finance_AppTests.swift; sourceTree = "<group>"; };
 		44E3D58B24F6C95E00D37DD8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5702CD3B25C897120076D435 /* UICarrouselStateModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICarrouselStateModel.swift; sourceTree = "<group>"; };
+		5702CD4225C89C4A0076D435 /* CreditCardCarouselDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditCardCarouselDelegate.swift; sourceTree = "<group>"; };
+		5702CD4A25C8A5240076D435 /* CreditCardStackCarouselDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditCardStackCarouselDelegate.swift; sourceTree = "<group>"; };
 		57043C8725103EF2006DBAB0 /* NumberTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberTextField.swift; sourceTree = "<group>"; };
 		570BC9F124FF125100CFD18F /* TransactionFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionFormView.swift; sourceTree = "<group>"; };
 		570BC9F524FF1D7E00CFD18F /* Transaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transaction.swift; sourceTree = "<group>"; };
@@ -182,6 +188,7 @@
 		44AAD34D24F883BB002C9722 /* components */ = {
 			isa = PBXGroup;
 			children = (
+				5702CD4125C89C360076D435 /* protocols */,
 				4409642C24F888DA004D117D /* Structs */,
 				44AAD34E24F883D0002C9722 /* CreditCardCarousel.swift */,
 				44AA805324F9592400274302 /* ProgressBar.swift */,
@@ -261,6 +268,7 @@
 		44E3D59524F6C97A00D37DD8 /* views */ = {
 			isa = PBXGroup;
 			children = (
+				5702CD3A25C896F50076D435 /* model */,
 				44E3D57624F6C95D00D37DD8 /* CreditCardView.swift */,
 				444CD3AB24FC566000DFAC80 /* HomeView.swift */,
 				570BC9F124FF125100CFD18F /* TransactionFormView.swift */,
@@ -276,6 +284,39 @@
 				44E3D57424F6C95D00D37DD8 /* SceneDelegate.swift */,
 			);
 			path = config;
+			sourceTree = "<group>";
+		};
+		5702CD3A25C896F50076D435 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				5702CD3B25C897120076D435 /* UICarrouselStateModel.swift */,
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
+		5702CD4125C89C360076D435 /* protocols */ = {
+			isa = PBXGroup;
+			children = (
+				5702CD4925C8A5130076D435 /* CreditCardStackCarousel */,
+				5702CD4825C8A4D70076D435 /* CreditCardCarousel */,
+			);
+			path = protocols;
+			sourceTree = "<group>";
+		};
+		5702CD4825C8A4D70076D435 /* CreditCardCarousel */ = {
+			isa = PBXGroup;
+			children = (
+				5702CD4225C89C4A0076D435 /* CreditCardCarouselDelegate.swift */,
+			);
+			path = CreditCardCarousel;
+			sourceTree = "<group>";
+		};
+		5702CD4925C8A5130076D435 /* CreditCardStackCarousel */ = {
+			isa = PBXGroup;
+			children = (
+				5702CD4A25C8A5240076D435 /* CreditCardStackCarouselDelegate.swift */,
+			);
+			path = CreditCardStackCarousel;
 			sourceTree = "<group>";
 		};
 		570FD853257976C9009D2AE3 /* domain */ = {
@@ -408,13 +449,16 @@
 				570FD85C25797726009D2AE3 /* TransactionService.swift in Sources */,
 				44A246ED24FC679E00D96994 /* CreditCard.swift in Sources */,
 				4474AE1224F9DE0F005D72B1 /* CalendarView.swift in Sources */,
+				5702CD3C25C897130076D435 /* UICarrouselStateModel.swift in Sources */,
 				57043C8825103EF2006DBAB0 /* NumberTextField.swift in Sources */,
 				44919F6624F95ADA003EDAF6 /* Transactions.swift in Sources */,
 				4474AE1524F9EA24005D72B1 /* CalendarMonths.swift in Sources */,
 				444CD3AC24FC566000DFAC80 /* HomeView.swift in Sources */,
 				57D877DD2510183B007D2788 /* CurrencyTextField.swift in Sources */,
 				4409643224F88A91004D117D /* Canvas.swift in Sources */,
+				5702CD4325C89C4A0076D435 /* CreditCardCarouselDelegate.swift in Sources */,
 				44E3D57324F6C95D00D37DD8 /* AppDelegate.swift in Sources */,
+				5702CD4B25C8A5240076D435 /* CreditCardStackCarouselDelegate.swift in Sources */,
 				4474AE1824F9F659005D72B1 /* DateExtension.swift in Sources */,
 				572C72722511A4DA0081CAF2 /* Input.swift in Sources */,
 				570BC9F624FF1D7E00CFD18F /* Transaction.swift in Sources */,

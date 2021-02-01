@@ -22,7 +22,7 @@ struct HomeView: View {
                 .onTapGesture { self.selected = 1 }
                 .tag(1)
             
-            TransactionFormView()
+            Text("Home")
                 .tabItem {
                     Image("wallet")
                         .renderingMode(.template)

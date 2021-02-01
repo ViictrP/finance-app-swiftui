@@ -11,7 +11,7 @@ import SwiftUI
 
 struct Canvas<Content : View> : View {
 	let content: Content
-	@EnvironmentObject var UIState: UIStateModel
+	@EnvironmentObject var UIState: UICarrouselStateModel
 	
 	@inlinable init(@ViewBuilder _ content: () -> Content) {
 		self.content = content()

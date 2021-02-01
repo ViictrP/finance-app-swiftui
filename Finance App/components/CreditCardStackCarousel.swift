@@ -3,7 +3,8 @@ import SwiftUI
 struct CreditCardStackCarousel: View {
     var width = UIScreen.main.bounds.width - (40 + 60)
     var height = UIScreen.main.bounds.height / 2
-    @State var swiped = 0
+    let delegate: CreditCardCarouselDelegate?
+    @State var swiped: Int = 0
     @State var items: [StackItem]
     
     var body: some View {
@@ -33,7 +34,7 @@ struct CreditCardStackCarousel: View {
                                 .opacity(0.045)
                             
                             // Read More Button...
-
+                            
                             Content(card: item)
                                 .frame(width: width, height: getHeight(index: item.id))
                         }
@@ -96,17 +97,13 @@ struct CreditCardStackCarousel: View {
     func onEnd(value: CGFloat,index: Int){
         let impactMed = UIImpactFeedbackGenerator(style: .medium)
         if value < 0{
-            
             if -value > width / 2 && index != items.last!.id{
-                
                 items[index].offset = -(width + 100)
                 swiped += 1
                 impactMed.impactOccurred()
             }
             else{
-                
                 items[index].offset = 0
-                
             }
         }else{
             
@@ -125,8 +122,11 @@ struct CreditCardStackCarousel: View {
                 }
             }
         }
-        
-        
+        if let delegate = self.delegate {
+            if swiped >= 0 && swiped < self.items.count {
+                delegate.onChange(creditCard: items[swiped].creditCard)
+            }
+        }
     }
     
     static func toStackItems(creditCards: [CreditCard]) -> [StackItem] {
@@ -141,7 +141,7 @@ struct CreditCardStackCarousel: View {
 
 struct CreditCardStackCarousel_Previews: PreviewProvider {
     static var previews: some View {
-        CreditCardStackCarousel(items: [
+        CreditCardStackCarousel(delegate: nil, items: [
             StackItem(id: 0, creditCard: CreditCard(id: 1, name: "Nubank", closeDay: 10, number: "5966", limit: 4250, availableLimit: 4250.96), offset: 0),
             StackItem(id: 1, creditCard: CreditCard(id: 1, name: "Nubank", closeDay: 10, number: "5966", limit: 4250, availableLimit: 4250.96), offset: 0),
             StackItem(id: 2, creditCard: CreditCard(id: 1, name: "Nubank", closeDay: 10, number: "5966", limit: 4250, availableLimit: 4250.96), offset: 0),
@@ -209,9 +209,6 @@ struct Content : View {
                     }
                     
                     Spacer()
-                    
-                    
-                    
                 }
             }
             .padding()

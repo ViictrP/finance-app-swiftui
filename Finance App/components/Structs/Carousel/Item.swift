@@ -10,7 +10,7 @@ import Foundation
 import SwiftUI
 
 struct Item<Content: View>: View {
-	@EnvironmentObject var UIState: UIStateModel
+	@EnvironmentObject var UIState: UICarrouselStateModel
 	let cardWidth: CGFloat
 	let cardHeight: CGFloat
 	

@@ -8,8 +8,10 @@
 
 import SwiftUI
 
-struct CreditCardView: View, CalendarMonthChanged {
-    let uiState: UIStateModel = UIStateModel()
+struct CreditCardView: View, CalendarMonthChanged, CreditCardCarouselDelegate, CreditCardStackCarouselDelegate {
+    
+    let uiState: UICarrouselStateModel = UICarrouselStateModel()
+    @State private var selectedCreditCard: CreditCard?
     @State var stack = false
     @State var month: Int = 0
     @State var year: Int = 0
@@ -30,6 +32,10 @@ struct CreditCardView: View, CalendarMonthChanged {
         self.year = year
     }
     
+    func onChange(creditCard: CreditCard) {
+        self.selectedCreditCard = creditCard
+    }
+    
     var body: some View {
         NavigationView {
             ScrollView(.vertical, showsIndicators: false) {
@@ -41,7 +47,10 @@ struct CreditCardView: View, CalendarMonthChanged {
                                 .bold()
                             Spacer()
                             HStack(spacing: 30) {
-                                Button(action: { stack.toggle() }, label: {
+                                Button(action: {
+                                    stack.toggle()
+                                    self.onChange(creditCard: self.creditCards[0])
+                                }, label: {
                                     Image(stack ? "stack" : "carousel")
                                         .resizable()
                                         .aspectRatio(contentMode: .fit)
@@ -60,9 +69,9 @@ struct CreditCardView: View, CalendarMonthChanged {
                         .padding(.horizontal)
                         
                         if stack {
-                            CreditCardStackCarousel(items: CreditCardStackCarousel.toStackItems(creditCards: creditCards))
+                            CreditCardStackCarousel(delegate: self, items: CreditCardStackCarousel.toStackItems(creditCards: creditCards))
                         } else {
-                            CreditCardCarousel(items: creditCards)
+                            CreditCardCarousel(items: creditCards, state: uiState, delegate: self)
                         }
                     }
                     
@@ -70,7 +79,7 @@ struct CreditCardView: View, CalendarMonthChanged {
                     
                     ProgressBar()
                     
-                    Transactions()
+                    Transactions(creditCard: selectedCreditCard != nil ? selectedCreditCard! : creditCards[0])
                 }
                 .padding(.top, 30)
             }

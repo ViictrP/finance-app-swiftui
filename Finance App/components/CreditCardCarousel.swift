@@ -8,36 +8,42 @@
 
 import SwiftUI
 
-struct CreditCardCarousel: View {
-	private var UIState: UIStateModel = UIStateModel()
+struct CreditCardCarousel: View, CarouselDelegate {
+    let delegate: CreditCardCarouselDelegate?
+	private var state: UICarrouselStateModel
 	var items: [CreditCard]
 	
-	init(items: [CreditCard]) {
+    init(items: [CreditCard], state: UICarrouselStateModel, delegate: CreditCardCarouselDelegate?) {
 		self.items = items
+        self.state = state
+        self.delegate = delegate
 	}
+    
+    func onChange(index: Int) {
+        if let delegate = self.delegate {
+            if index >= 0 && index < items.count {
+                delegate.onChange(creditCard: items[index])
+            }
+        }
+    }
 	
 	var body: some View {
 		let spacing:            CGFloat = 10
 		let widthOfHiddenCards: CGFloat = 5
 		
-		return Carousel(numberOfItems: CGFloat( items.count ), spacing: spacing, widthOfHiddenCards: widthOfHiddenCards) {
+        return Carousel(numberOfItems: CGFloat( items.count ), spacing: spacing, widthOfHiddenCards: widthOfHiddenCards, delegate: self) {
 			ForEach(items.indices, id: \.self) { index in
                 CreditCardItem(creditCard: self.items[index])
 			}
 		}
 		.frame(width: UIScreen.main.bounds.width)
-		.environmentObject( self.UIState )
+		.environmentObject( self.state )
 	}
-}
-
-public class UIStateModel: ObservableObject {
-	@Published var activeCard: Int      = 0
-	@Published var screenDrag: Float    = 0.0
 }
 
 struct SnapCarousel_Previews: PreviewProvider {
 	static var previews: some View {
-		CreditCardCarousel(items: [CreditCard(id: 1, name: "Latam", closeDay: 10, number: "9162", limit: 8500, availableLimit: 8500)])
+        CreditCardCarousel(items: [CreditCard(id: 1, name: "Latam", closeDay: 10, number: "9162", limit: 8500, availableLimit: 8500)], state: UICarrouselStateModel(), delegate: nil)
 	}
 }
 

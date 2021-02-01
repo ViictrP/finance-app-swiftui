@@ -9,6 +9,10 @@
 import Foundation
 import SwiftUI
 
+protocol CarouselDelegate {
+    func onChange(index: Int)
+}
+
 struct Carousel<Items : View> : View {
 	let items: Items
 	let numberOfItems: CGFloat //= 8
@@ -16,15 +20,17 @@ struct Carousel<Items : View> : View {
 	let widthOfHiddenCards: CGFloat //= 32
 	let totalSpacing: CGFloat
 	let cardWidth: CGFloat
+    let delegate: CarouselDelegate
 	
 	@GestureState var isDetectingLongPress = false
 	
-	@EnvironmentObject var UIState: UIStateModel
+	@EnvironmentObject var UIState: UICarrouselStateModel
 		
 	@inlinable public init(
 		numberOfItems: CGFloat,
 		spacing: CGFloat,
 		widthOfHiddenCards: CGFloat,
+        delegate: CarouselDelegate,
 		@ViewBuilder _ items: () -> Items) {
 		
 		self.items = items()
@@ -33,7 +39,7 @@ struct Carousel<Items : View> : View {
 		self.widthOfHiddenCards = widthOfHiddenCards
 		self.totalSpacing = (numberOfItems - 1) * spacing
 		self.cardWidth = UIScreen.main.bounds.width - (widthOfHiddenCards*2) - (spacing*2) //279
-		
+        self.delegate = delegate
 	}
 	
 	var body: some View {
@@ -73,6 +79,8 @@ struct Carousel<Items : View> : View {
 				let impactMed = UIImpactFeedbackGenerator(style: .medium)
 				impactMed.impactOccurred()
 			}
+            
+            delegate.onChange(index: self.UIState.activeCard)
 		})
 	}
 }

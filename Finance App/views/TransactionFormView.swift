@@ -19,6 +19,8 @@ struct TransactionFormView: View {
     @State var tapped = false
     @State private var openned = true
     
+    var creditCard: CreditCard
+    
     func save() {
         if !title.isEmpty && !description.isEmpty && !value.isEmpty {
             let transaction = Transaction(id: 1, title: title, description: description, when: when, value: Double(value)!, icon: "teste", parcelAmount: 1, categoryId: category, parcelId: nil, invoiceId: nil, parcelNumber: 1, budgetId: 1)
@@ -30,7 +32,23 @@ struct TransactionFormView: View {
         ScrollView(showsIndicators: false) {
             ZStack {
                 VStack(alignment: .leading, spacing: 30) {
-                    Title()
+                    VStack(alignment: .leading, spacing: 30) {
+                        Text("Nova transação")
+                            .font(.largeTitle)
+                            .bold()
+                        
+                        VStack(alignment: .leading, spacing: 10) {
+                            Group {
+                                Text("Cadastre uma nova transação para o cartão ") +
+                                Text("\(self.creditCard.name). ")
+                                    .font(.system(size: 18))
+                                    .bold() +
+                                Text("Preencha todas as informações corretamente.")
+                            }
+                            Text("obs: os campos contendo * são obrigatórios.")
+                                .font(.footnote)
+                        }
+                    }
                     
                     VStack(spacing: 20) {
                         DropDown(title: "categoria", items: [
@@ -75,22 +93,6 @@ struct TransactionFormView: View {
 
 struct TransactionFormView_Previews: PreviewProvider {
     static var previews: some View {
-        TransactionFormView()
-    }
-}
-
-struct Title: View {
-    var body: some View {
-        VStack(alignment: .leading, spacing: 30) {
-            Text("Nova transação")
-                .font(.largeTitle)
-                .bold()
-            
-            VStack(alignment: .leading, spacing: 10) {
-                Text("Cadastre uma nova transação para o cartão Nubank. Preencha todas as informações corretamente.")
-                Text("obs: os campos contendo * são obrigatórios.")
-                    .font(.footnote)
-            }
-        }
+        TransactionFormView(creditCard: CreditCard(id: 1, name: "Nubank", closeDay: 10, number: "5966", limit: 10000, availableLimit: 10000))
     }
 }
