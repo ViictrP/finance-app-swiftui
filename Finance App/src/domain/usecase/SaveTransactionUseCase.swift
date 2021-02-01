@@ -8,6 +8,6 @@
 
 import Foundation
 
-protocol SaveTransaction {
+protocol SaveTransactionUseCase {
     func save(transaction: Transaction)
 }
