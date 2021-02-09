@@ -11,6 +11,7 @@ import SwiftUI
 struct CreditCardView: View, CalendarMonthChanged, CreditCardCarouselDelegate, CreditCardStackCarouselDelegate {
     
     let uiState: UICarrouselStateModel = UICarrouselStateModel()
+    @State private var showingCreditCardForm = false
     @State private var selectedCreditCard: CreditCard?
     @State var stack = false
     @State var month: Int = 0
@@ -58,12 +59,15 @@ struct CreditCardView: View, CalendarMonthChanged, CreditCardCarouselDelegate, C
                                 })
                                 .frame(width: 24, height: 24)
                                 
-                                Button(action: {}, label: {
+                                Button(action: { self.showingCreditCardForm.toggle() }, label: {
                                     Image("plus-solid")
                                         .resizable()
                                         .aspectRatio(contentMode: .fit)
                                 })
                                 .frame(width: 24, height: 24)
+                                .sheet(isPresented: $showingCreditCardForm, onDismiss: {}, content: {
+                                    CreditCardFormView()
+                                })
                             }
                         }
                         .padding(.horizontal)
@@ -75,7 +79,7 @@ struct CreditCardView: View, CalendarMonthChanged, CreditCardCarouselDelegate, C
                         }
                     }
                     
-                    CalendarView(delegate: self)
+                    CustomCalendar(delegate: self)
                     
                     ProgressBar()
                     

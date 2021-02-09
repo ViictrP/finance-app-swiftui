@@ -13,7 +13,7 @@ protocol CalendarMonthChanged {
 	func onPreviousMonth(month: Int, year: Int)
 }
 
-struct CalendarView: View {
+struct CustomCalendar: View {
 	let BUTTON_WIDTH: CGFloat = 24
 	let BUTTON_HEIGHT: CGFloat = 40
 	var delegate: CalendarMonthChanged?
@@ -85,6 +85,6 @@ struct CalendarView: View {
 
 struct Calendar_Previews: PreviewProvider {
 	static var previews: some View {
-		CalendarView()
+		CustomCalendar()
 	}
 }
