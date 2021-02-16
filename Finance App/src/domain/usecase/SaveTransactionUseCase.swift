@@ -9,5 +9,5 @@
 import Foundation
 
 protocol SaveTransactionUseCase {
-    func save(transaction: Transaction)
+    func save(_ transaction: Transaction)
 }

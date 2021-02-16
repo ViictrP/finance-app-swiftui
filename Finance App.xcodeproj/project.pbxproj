@@ -12,6 +12,9 @@
 		4409643024F8893E004D117D /* Carousel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4409642F24F8893E004D117D /* Carousel.swift */; };
 		4409643224F88A91004D117D /* Canvas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4409643124F88A91004D117D /* Canvas.swift */; };
 		4409643424F88AE5004D117D /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4409643324F88AE5004D117D /* Item.swift */; };
+		4444C9E525DC85270026E862 /* SaveTransactionRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4444C9E425DC85270026E862 /* SaveTransactionRepository.swift */; };
+		4444C9F625DC87070026E862 /* TransactionDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4444C9F525DC87070026E862 /* TransactionDTO.swift */; };
+		4444CA0125DC89D40026E862 /* RealmTransactionRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4444CA0025DC89D40026E862 /* RealmTransactionRepository.swift */; };
 		444CD3AC24FC566000DFAC80 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 444CD3AB24FC566000DFAC80 /* HomeView.swift */; };
 		4474AE1224F9DE0F005D72B1 /* CustomCalendar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4474AE1124F9DE0F005D72B1 /* CustomCalendar.swift */; };
 		4474AE1524F9EA24005D72B1 /* CalendarMonths.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4474AE1424F9EA24005D72B1 /* CalendarMonths.swift */; };
@@ -31,14 +34,13 @@
 		5702CD3C25C897130076D435 /* UICarrouselStateModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5702CD3B25C897120076D435 /* UICarrouselStateModel.swift */; };
 		5702CD4325C89C4A0076D435 /* CreditCardCarouselDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5702CD4225C89C4A0076D435 /* CreditCardCarouselDelegate.swift */; };
 		5702CD4B25C8A5240076D435 /* CreditCardStackCarouselDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5702CD4A25C8A5240076D435 /* CreditCardStackCarouselDelegate.swift */; };
-		5702CD4F25C8A78D0076D435 /* RealmTransactionRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5702CD4E25C8A78D0076D435 /* RealmTransactionRepository.swift */; };
 		57043C8825103EF2006DBAB0 /* NumberTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57043C8725103EF2006DBAB0 /* NumberTextField.swift */; };
 		570BC9F224FF125100CFD18F /* TransactionFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570BC9F124FF125100CFD18F /* TransactionFormView.swift */; };
 		570BC9F624FF1D7E00CFD18F /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570BC9F524FF1D7E00CFD18F /* Transaction.swift */; };
 		570BC9F824FF23E200CFD18F /* Invoice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570BC9F724FF23E200CFD18F /* Invoice.swift */; };
 		570FD850257971B8009D2AE3 /* DatePickerInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570FD84F257971B8009D2AE3 /* DatePickerInput.swift */; };
 		570FD855257976E2009D2AE3 /* SaveTransactionUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570FD854257976E2009D2AE3 /* SaveTransactionUseCase.swift */; };
-		570FD85C25797726009D2AE3 /* TransactionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570FD85B25797726009D2AE3 /* TransactionService.swift */; };
+		570FD85C25797726009D2AE3 /* SaveTransactionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570FD85B25797726009D2AE3 /* SaveTransactionService.swift */; };
 		572C72722511A4DA0081CAF2 /* Input.swift in Sources */ = {isa = PBXBuildFile; fileRef = 572C72712511A4DA0081CAF2 /* Input.swift */; };
 		577B7D292501575C00100EE7 /* CreditCardStackCarousel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 577B7D282501575C00100EE7 /* CreditCardStackCarousel.swift */; };
 		577E3445250123420093403B /* DropDown.swift in Sources */ = {isa = PBXBuildFile; fileRef = 577E3444250123420093403B /* DropDown.swift */; };
@@ -62,6 +64,9 @@
 		4409642F24F8893E004D117D /* Carousel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Carousel.swift; sourceTree = "<group>"; };
 		4409643124F88A91004D117D /* Canvas.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Canvas.swift; sourceTree = "<group>"; };
 		4409643324F88AE5004D117D /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		4444C9E425DC85270026E862 /* SaveTransactionRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveTransactionRepository.swift; sourceTree = "<group>"; };
+		4444C9F525DC87070026E862 /* TransactionDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionDTO.swift; sourceTree = "<group>"; };
+		4444CA0025DC89D40026E862 /* RealmTransactionRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RealmTransactionRepository.swift; path = "Finance App/src/datalayer/dto/RealmTransactionRepository.swift"; sourceTree = SOURCE_ROOT; };
 		444CD3AB24FC566000DFAC80 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		4474AE1124F9DE0F005D72B1 /* CustomCalendar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCalendar.swift; sourceTree = "<group>"; };
 		4474AE1424F9EA24005D72B1 /* CalendarMonths.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarMonths.swift; sourceTree = "<group>"; };
@@ -85,14 +90,13 @@
 		5702CD3B25C897120076D435 /* UICarrouselStateModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICarrouselStateModel.swift; sourceTree = "<group>"; };
 		5702CD4225C89C4A0076D435 /* CreditCardCarouselDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditCardCarouselDelegate.swift; sourceTree = "<group>"; };
 		5702CD4A25C8A5240076D435 /* CreditCardStackCarouselDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditCardStackCarouselDelegate.swift; sourceTree = "<group>"; };
-		5702CD4E25C8A78D0076D435 /* RealmTransactionRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmTransactionRepository.swift; sourceTree = "<group>"; };
 		57043C8725103EF2006DBAB0 /* NumberTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberTextField.swift; sourceTree = "<group>"; };
 		570BC9F124FF125100CFD18F /* TransactionFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionFormView.swift; sourceTree = "<group>"; };
 		570BC9F524FF1D7E00CFD18F /* Transaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transaction.swift; sourceTree = "<group>"; };
 		570BC9F724FF23E200CFD18F /* Invoice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Invoice.swift; sourceTree = "<group>"; };
 		570FD84F257971B8009D2AE3 /* DatePickerInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerInput.swift; sourceTree = "<group>"; };
 		570FD854257976E2009D2AE3 /* SaveTransactionUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveTransactionUseCase.swift; sourceTree = "<group>"; };
-		570FD85B25797726009D2AE3 /* TransactionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionService.swift; sourceTree = "<group>"; };
+		570FD85B25797726009D2AE3 /* SaveTransactionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveTransactionService.swift; sourceTree = "<group>"; };
 		572C72712511A4DA0081CAF2 /* Input.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Input.swift; sourceTree = "<group>"; };
 		577B7D282501575C00100EE7 /* CreditCardStackCarousel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditCardStackCarousel.swift; sourceTree = "<group>"; };
 		577E3444250123420093403B /* DropDown.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropDown.swift; sourceTree = "<group>"; };
@@ -139,6 +143,46 @@
 			path = Carousel;
 			sourceTree = "<group>";
 		};
+		4444C9E325DC85190026E862 /* repository */ = {
+			isa = PBXGroup;
+			children = (
+				4444C9E425DC85270026E862 /* SaveTransactionRepository.swift */,
+			);
+			path = repository;
+			sourceTree = "<group>";
+		};
+		4444C9F425DC86FF0026E862 /* dto */ = {
+			isa = PBXGroup;
+			children = (
+				4444C9F525DC87070026E862 /* TransactionDTO.swift */,
+			);
+			path = dto;
+			sourceTree = "<group>";
+		};
+		4444C9FB25DC88380026E862 /* dataprovider */ = {
+			isa = PBXGroup;
+			children = (
+				4444C9FE25DC89AC0026E862 /* repository */,
+			);
+			path = dataprovider;
+			sourceTree = "<group>";
+		};
+		4444C9FE25DC89AC0026E862 /* repository */ = {
+			isa = PBXGroup;
+			children = (
+				4444C9FF25DC89C30026E862 /* realm */,
+			);
+			path = repository;
+			sourceTree = "<group>";
+		};
+		4444C9FF25DC89C30026E862 /* realm */ = {
+			isa = PBXGroup;
+			children = (
+				4444CA0025DC89D40026E862 /* RealmTransactionRepository.swift */,
+			);
+			path = realm;
+			sourceTree = "<group>";
+		};
 		4474AE1324F9EA0F005D72B1 /* Calendar */ = {
 			isa = PBXGroup;
 			children = (
@@ -169,14 +213,6 @@
 				570FD853257976C9009D2AE3 /* usecase */,
 			);
 			path = domain;
-			sourceTree = "<group>";
-		};
-		44A246E924FC673600D96994 /* dataprovider */ = {
-			isa = PBXGroup;
-			children = (
-				5702CD4E25C8A78D0076D435 /* RealmTransactionRepository.swift */,
-			);
-			path = dataprovider;
 			sourceTree = "<group>";
 		};
 		44A246EB24FC679000D96994 /* entity */ = {
@@ -262,8 +298,8 @@
 		44E3D59424F6C97500D37DD8 /* src */ = {
 			isa = PBXGroup;
 			children = (
+				4444C9FB25DC88380026E862 /* dataprovider */,
 				5702CD5625C8A8210076D435 /* datalayer */,
-				44A246E924FC673600D96994 /* dataprovider */,
 				44A246E824FC673200D96994 /* domain */,
 				44A246E724FC672900D96994 /* configuration */,
 			);
@@ -328,6 +364,8 @@
 		5702CD5625C8A8210076D435 /* datalayer */ = {
 			isa = PBXGroup;
 			children = (
+				4444C9F425DC86FF0026E862 /* dto */,
+				4444C9E325DC85190026E862 /* repository */,
 				570FD85A2579770D009D2AE3 /* service */,
 			);
 			path = datalayer;
@@ -344,7 +382,7 @@
 		570FD85A2579770D009D2AE3 /* service */ = {
 			isa = PBXGroup;
 			children = (
-				570FD85B25797726009D2AE3 /* TransactionService.swift */,
+				570FD85B25797726009D2AE3 /* SaveTransactionService.swift */,
 			);
 			path = service;
 			sourceTree = "<group>";
@@ -458,11 +496,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4444C9F625DC87070026E862 /* TransactionDTO.swift in Sources */,
 				570FD850257971B8009D2AE3 /* DatePickerInput.swift in Sources */,
 				570FD855257976E2009D2AE3 /* SaveTransactionUseCase.swift in Sources */,
-				570FD85C25797726009D2AE3 /* TransactionService.swift in Sources */,
+				570FD85C25797726009D2AE3 /* SaveTransactionService.swift in Sources */,
 				44A246ED24FC679E00D96994 /* CreditCard.swift in Sources */,
-				5702CD4F25C8A78D0076D435 /* RealmTransactionRepository.swift in Sources */,
 				4474AE1224F9DE0F005D72B1 /* CustomCalendar.swift in Sources */,
 				5702CD3C25C897130076D435 /* UICarrouselStateModel.swift in Sources */,
 				57043C8825103EF2006DBAB0 /* NumberTextField.swift in Sources */,
@@ -489,8 +527,10 @@
 				577B7D292501575C00100EE7 /* CreditCardStackCarousel.swift in Sources */,
 				44E3D57724F6C95D00D37DD8 /* CreditCardView.swift in Sources */,
 				44AAD34F24F883D0002C9722 /* CreditCardCarousel.swift in Sources */,
+				4444CA0125DC89D40026E862 /* RealmTransactionRepository.swift in Sources */,
 				577E344A250123C50093403B /* DropDownItem.swift in Sources */,
 				44E2ABF624FABC3600EBABED /* TransactionItem.swift in Sources */,
+				4444C9E525DC85270026E862 /* SaveTransactionRepository.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
