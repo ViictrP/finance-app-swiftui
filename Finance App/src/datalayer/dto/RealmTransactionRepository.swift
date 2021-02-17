@@ -7,10 +7,12 @@
 //
 
 import Foundation
+import RealmSwift
 
 class RealmTransactionRepository: SaveTransactionRepository {
     
     func save(_ transaction: TransactionDTO) {
+        let realm = try! Realm()
         // TODO implementar repository
     }
 }
